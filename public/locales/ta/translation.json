@@ -1,0 +1,72 @@
+{
+  "header": {
+    "home": "முகப்பு",
+    "about": "எங்களைப் பற்றி",
+    "doctors": "மருத்துவர்கள்",
+    "pages": "பக்கங்கள்",
+    "blog": "வலைப்பதிவு",
+    "contact": "தொடர்பு",
+    "hotline": "ஹாட்லைன்- 09856",
+    "title": "எனது பயன்பாடு",
+    "selectLanguage": "[Needs Translation] Select Language",
+    "symptomChecker": "[Needs Translation] Symptom Checker"
+  },
+  "languages": {
+    "en": "[Needs Translation] English",
+    "hi": "[Needs Translation] Hindi",
+    "bn": "[Needs Translation] Bengali",
+    "te": "[Needs Translation] Telugu",
+    "mr": "[Needs Translation] Marathi",
+    "ta": "[Needs Translation] Tamil",
+    "gu": "[Needs Translation] Gujarati",
+    "kn": "[Needs Translation] Kannada",
+    "ml": "[Needs Translation] Malayalam"
+  },
+  "homePage": {
+    "careSubtitle": "உங்கள் கவனிப்புக்காக நாங்கள் இங்கே இருக்கிறோம்",
+    "mainTitle": "சிறந்த பராமரிப்பு & சிறந்த மருத்துவர்",
+    "description": "லோரம் இப்சம் டோலர் சிட் அமெட், கான்செக்டெட்டர் அடிபிசிங் எலிட் செட் டோ ஈயுஸ்மோட் டெம்போர் இன்சிடிடண்ட் உட் லபோரே மற்றும் டோலோர் மக்னா அலிகா. குயிஸ் இப்சம் சஸ்பெண்டிஸ் அல்ட்ரைசஸ் கிராவிடா. ரிசஸ் கமோடோ விவர்ரா மேசெனாஸ் அக்கம்சன் லாகஸ் வெல் ஃபேசிலிசிஸ்.",
+    "appointmentButton": "சந்திப்பை மேற்கொள்ளுங்கள்",
+    "welcome": "முகப்பு பக்கத்திற்கு வரவேற்கிறோம்!",
+    "additional_content_header": "மேலும் தகவல்",
+    "additional_content_placeholder": "உள்ளடக்கம் விரைவில் வரும்..."
+  },
+  "speech": {
+    "mic_not_supported": "உங்கள் உலாவி ஆடியோ பதிவை ஆதரிக்கவில்லை.",
+    "requesting_permission": "மைக்ரோஃபோன் அனுமதி கோரப்படுகிறது...",
+    "no_supported_format": "உங்கள் உலாவி விருப்பமான ஆடியோ பதிவு வடிவங்களில் (WAV, OGG, MP3, MP4) எதையும் ஆதரிக்கவில்லை. பதிவு சாத்தியமில்லை.",
+    "recording_wav": "WAV வடிவத்தில் பதிவு செய்யப்படுகிறது...",
+    "recording_format": "{{format}} வடிவத்தில் பதிவு செய்யப்படுகிறது...",
+    "no_audio_data": "ஆடியோ தரவு எதுவும் பதிவு செய்யப்படவில்லை.",
+    "recording_error": "பதிவு பிழை: {{errorName}}",
+    "recording_in_progress": "பதிவு செய்யப்படுகிறது... நிறுத்த மீண்டும் கிளிக் செய்யவும்.",
+    "mic_permission_denied": "மைக்ரோஃபோன் அணுகல் மறுக்கப்பட்டது. உங்கள் உலாவி அமைப்புகளில் மைக்ரோஃபோன் அணுகலை அனுமதிக்கவும்.",
+    "mic_error": "மைக்ரோஃபோனை அணுகுவதில் பிழை: {{errorMessage}}",
+    "stopping_recording": "பதிவை நிறுத்துகிறது, செயலாக்குகிறது...",
+    "error_no_target_input": "பிழை: SpeechComponent க்கு இலக்கு உள்ளீட்டு தேர்வி எதுவும் வழங்கப்படவில்லை.",
+    "sending_audio": "ஆடியோவை பின்தளத்திற்கு அனுப்புகிறது...",
+    "transcription_received_updated": "படியெடுத்தல் பெறப்பட்டது மற்றும் உள்ளீடு புதுப்பிக்கப்பட்டது.",
+    "transcription_received_target_not_found": "படியெடுத்தல் பெறப்பட்டது, ஆனால் இலக்கு உள்ளீடு கிடைக்கவில்லை.",
+    "invalid_transcription_format": "பின்தளம் ஒரு சரியான படியெடுத்தலை வழங்கவில்லை.",
+    "unknown_backend_error": "அறியப்படாத பின்தள பிழை",
+    "backend_error_status": "பிழை: பின்தள பிழை: {{status}} {{backendErrorMessage}}",
+    "no_response_from_server": "பிழை: சேவையகத்திலிருந்து பதில் இல்லை. நெட்வொர்க் அல்லது பின்தளத்தை சரிபார்க்கவும்.",
+    "error_message": "பிழை: {{errorMessage}}",
+    "start_recording_button": "பதிவைத் தொடங்கு",
+    "stop_recording_button": "பதிவை நிறுத்து",
+    "mic_not_supported_message": "உங்கள் உலாவி ஆடியோ பதிவை ஆதரிக்கவில்லை."
+  },
+  "chatbot": {
+    "please_enter_message": "தயவுசெய்து ஒரு செய்தியை உள்ளிடவும்",
+    "unexpected_error": "எதிர்பாராத பிழை ஏற்பட்டது",
+    "title": "அரட்டை உதவியாளர்",
+    "welcome_message_title": "அரட்டை உதவியாளருக்கு வரவேற்கிறோம்!",
+    "welcome_message_subtitle": "ஏதேனும் கேள்விகளைக் கேளுங்கள், அதை நன்கு புரிந்துகொள்ள நான் உங்களுக்கு உதவுவேன்.",
+    "input_placeholder": "ஒரு கேள்வியைக் கேளுங்கள்...",
+    "send_button_aria_label": "செய்தியை அனுப்பு",
+    "newTitle": "[Needs Translation] How have you been feeling lately?",
+    "activate_voice_input": "[Needs Translation] Activate Voice Input",
+    "deactivate_voice_input": "[Needs Translation] Deactivate Voice Input",
+    "voice_input_active_placeholder": "[Needs Translation] Voice input active. Say something..."
+  }
+}

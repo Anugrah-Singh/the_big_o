@@ -1,0 +1,72 @@
+{
+  "header": {
+    "home": "ഹോം",
+    "about": "ഞങ്ങളെക്കുറിച്ച്",
+    "doctors": "ഡോക്ടർമാർ",
+    "pages": "പേജുകൾ",
+    "blog": "ബ്ലോഗ്",
+    "contact": "ബന്ധപ്പെടുക",
+    "hotline": "ഹോട്ട്‌ലൈൻ- 09856",
+    "title": "എന്റെ ആപ്പ്",
+    "selectLanguage": "[Needs Translation] Select Language",
+    "symptomChecker": "[Needs Translation] Symptom Checker"
+  },
+  "languages": {
+    "en": "[Needs Translation] English",
+    "hi": "[Needs Translation] Hindi",
+    "bn": "[Needs Translation] Bengali",
+    "te": "[Needs Translation] Telugu",
+    "mr": "[Needs Translation] Marathi",
+    "ta": "[Needs Translation] Tamil",
+    "gu": "[Needs Translation] Gujarati",
+    "kn": "[Needs Translation] Kannada",
+    "ml": "[Needs Translation] Malayalam"
+  },
+  "homePage": {
+    "careSubtitle": "നിങ്ങളുടെ പരിചരണത്തിനായി ഞങ്ങൾ ഇവിടെയുണ്ട്",
+    "mainTitle": "മികച്ച പരിചരണവും മികച്ച ഡോക്ടറും",
+    "description": "ലോറം ഇപ്‌സം ഡോളർ സിറ്റ് അമേറ്റ്, കോൺസെക്റ്ററ്റർ അഡിപിസിംഗ് എലൈറ്റ് സെഡ് ഡോ യൂസ്‌മോഡ് ടെമ്പോർ ഇൻസിഡിഡന്റ് യൂട്ട് ലേബർ അറ്റ് ഡോളർ മാഗ്ന അലിക്വാ. ക്വിസ് ഇപ്‌സം സസ്പെൻഡിസ് അൾട്രിസെസ് ഗ്രാവിഡ. റിസസ് കമ്മോഡോ വിവറ മൈസെനാസ് അക്യുമ്സൻ ലാക്കസ് വെൽ ഫെസിലിസിസ്.",
+    "appointmentButton": "അപ്പോയിന്റ്മെന്റ് എടുക്കുക",
+    "welcome": "ഹോം പേജിലേക്ക് സ്വാഗതം!",
+    "additional_content_header": "കൂടുതൽ വിവരങ്ങൾ",
+    "additional_content_placeholder": "ഉള്ളടക്കം ഉടൻ വരുന്നു..."
+  },
+  "speech": {
+    "mic_not_supported": "നിങ്ങളുടെ ബ്രൗസർ ഓഡിയോ റെക്കോർഡിംഗിനെ പിന്തുണയ്ക്കുന്നില്ല.",
+    "requesting_permission": "മൈക്രോഫോൺ അനുമതി അഭ്യർത്ഥിക്കുന്നു...",
+    "no_supported_format": "നിങ്ങളുടെ ബ്രൗസർ തിരഞ്ഞെടുത്ത ഓഡിയോ റെക്കോർഡിംഗ് ഫോർമാറ്റുകളൊന്നും (WAV, OGG, MP3, MP4) പിന്തുണയ്ക്കുന്നില്ല. റെക്കോർഡിംഗ് സാധ്യമല്ല.",
+    "recording_wav": "WAV ഫോർമാറ്റിൽ റെക്കോർഡ് ചെയ്യുന്നു...",
+    "recording_format": "{{format}} ഫോർമാറ്റിൽ റെക്കോർഡ് ചെയ്യുന്നു...",
+    "no_audio_data": "ഓഡിയോ ഡാറ്റയൊന്നും റെക്കോർഡ് ചെയ്തിട്ടില്ല.",
+    "recording_error": "റെക്കോർഡിംഗ് പിശക്: {{errorName}}",
+    "recording_in_progress": "റെക്കോർഡ് ചെയ്യുന്നു... നിർത്താൻ വീണ്ടും ക്ലിക്ക് ചെയ്യുക.",
+    "mic_permission_denied": "മൈക്രോഫോൺ ആക്സസ് നിഷേധിച്ചു. നിങ്ങളുടെ ബ്രൗസർ ക്രമീകരണങ്ങളിൽ മൈക്രോഫോൺ ആക്സസ് അനുവദിക്കുക.",
+    "mic_error": "മൈക്രോഫോൺ ആക്സസ് ചെയ്യുന്നതിൽ പിശക്: {{errorMessage}}",
+    "stopping_recording": "റെക്കോർഡിംഗ് നിർത്തുന്നു, പ്രോസസ്സ് ചെയ്യുന്നു...",
+    "error_no_target_input": "പിശക്: SpeechComponent-ന് ടാർഗെറ്റ് ഇൻപുട്ട് സെലക്ടർ നൽകിയിട്ടില്ല.",
+    "sending_audio": "ഓഡിയോ ബാക്കെൻഡിലേക്ക് അയക്കുന്നു...",
+    "transcription_received_updated": "ട്രാൻസ്ക്രിപ്ഷൻ ലഭിച്ചു, ഇൻപുട്ട് അപ്ഡേറ്റ് ചെയ്തു.",
+    "transcription_received_target_not_found": "ട്രാൻസ്ക്രിപ്ഷൻ ലഭിച്ചു, പക്ഷേ ടാർഗെറ്റ് ഇൻപുട്ട് കണ്ടെത്തിയില്ല.",
+    "invalid_transcription_format": "ബാക്കെൻഡ് സാധുവായ ട്രാൻസ്ക്രിപ്ഷൻ നൽകിയില്ല.",
+    "unknown_backend_error": "അജ്ഞാതമായ ബാക്കെൻഡ് പിശക്",
+    "backend_error_status": "പിശക്: ബാക്കെൻഡ് പിശക്: {{status}} {{backendErrorMessage}}",
+    "no_response_from_server": "പിശക്: സെർവറിൽ നിന്ന് പ്രതികരണമൊന്നുമില്ല. നെറ്റ്‌വർക്ക് അല്ലെങ്കിൽ ബാക്കെൻഡ് പരിശോധിക്കുക.",
+    "error_message": "പിശക്: {{errorMessage}}",
+    "start_recording_button": "റെക്കോർഡിംഗ് ആരംഭിക്കുക",
+    "stop_recording_button": "റെക്കോർഡിംഗ് നിർത്തുക",
+    "mic_not_supported_message": "നിങ്ങളുടെ ബ്രൗസർ ഓഡിയോ റെക്കോർഡിംഗിനെ പിന്തുണയ്ക്കുന്നില്ല."
+  },
+  "chatbot": {
+    "please_enter_message": "ദയവായി ഒരു സന്ദേശം നൽകുക",
+    "unexpected_error": "അപ്രതീക്ഷിതമായ ഒരു പിശക് സംഭവിച്ചു",
+    "title": "ചാറ്റ് അസിസ്റ്റന്റ്",
+    "welcome_message_title": "ചാറ്റ് അസിസ്റ്റന്റിലേക്ക് സ്വാഗതം!",
+    "welcome_message_subtitle": "ഏത് ചോദ്യങ്ങളും ചോദിക്കൂ, അത് നന്നായി മനസ്സിലാക്കാൻ ഞാൻ നിങ്ങളെ സഹായിക്കാം.",
+    "input_placeholder": "ഒരു ചോദ്യം ചോദിക്കൂ...",
+    "send_button_aria_label": "സന്ദേശം അയക്കൂ",
+    "newTitle": "[Needs Translation] How have you been feeling lately?",
+    "activate_voice_input": "[Needs Translation] Activate Voice Input",
+    "deactivate_voice_input": "[Needs Translation] Deactivate Voice Input",
+    "voice_input_active_placeholder": "[Needs Translation] Voice input active. Say something..."
+  }
+}

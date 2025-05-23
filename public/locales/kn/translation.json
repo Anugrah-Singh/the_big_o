@@ -1,0 +1,72 @@
+{
+  "header": {
+    "home": "ಮುಖಪುಟ",
+    "about": "ನಮ್ಮ ಬಗ್ಗೆ",
+    "doctors": "ವೈದ್ಯರು",
+    "pages": "ಪುಟಗಳು",
+    "blog": "ಬ್ಲಾಗ್",
+    "contact": "ಸಂಪರ್ಕಿಸಿ",
+    "hotline": "ಹಾಟ್‌ಲೈನ್ - 09856",
+    "title": "ನನ್ನ ಅಪ್ಲಿಕೇಶನ್",
+    "selectLanguage": "[Needs Translation] Select Language",
+    "symptomChecker": "[Needs Translation] Symptom Checker"
+  },
+  "languages": {
+    "en": "[Needs Translation] English",
+    "hi": "[Needs Translation] Hindi",
+    "bn": "[Needs Translation] Bengali",
+    "te": "[Needs Translation] Telugu",
+    "mr": "[Needs Translation] Marathi",
+    "ta": "[Needs Translation] Tamil",
+    "gu": "[Needs Translation] Gujarati",
+    "kn": "[Needs Translation] Kannada",
+    "ml": "[Needs Translation] Malayalam"
+  },
+  "homePage": {
+    "careSubtitle": "ನಿಮ್ಮ ಆರೈಕೆಗಾಗಿ ನಾವಿದ್ದೇವೆ",
+    "mainTitle": "ಉತ್ತಮ ಆರೈಕೆ ಮತ್ತು ಉತ್ತಮ ವೈದ್ಯರು",
+    "description": "ಲೊರೆಮ್ ಇಪ್ಸಮ್ ಡೊಲೊರ್ ಸಿಟ್ ಅಮೆಟ್, ಕಾನ್ಸೆಕ್ಟೆಟರ್ ಅಡಿಪಿಸಿಂಗ್ ಎಲಿಟ್ ಸೆಡ್ ಡು ಯುಸ್ಮೋಡ್ ಟೆಂಪೊರ್ ಇನ್ಸಿಡಿಡಂಟ್ ಉಟ್ ಲೇಬೊರೆ ಎಟ್ ಡೊಲೊರೆ ಮ್ಯಾಗ್ನಾ ಅಲಿಕ್ವಾ. ಕ್ವಿಸ್ ಇಪ್ಸಮ್ ಸಸ್ಪೆಂಡಿಸ್ಸೆ ಅಲ್ಟ್ರಿಸಸ್ ಗ್ರಾವಿಡಾ. ರಿಸಸ್ ಕಮೊಡೊ ವಿವೆರ್ರಾ ಮೆಸೆನಾಸ್ ಅಕ್ಯುಮ್ಸನ್ ಲೇಕಸ್ ವೆಲ್ ಫೆಸಿಲಿಸಿಸ್.",
+    "appointmentButton": "ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಕಾಯ್ದಿರಿಸಿ",
+    "welcome": "ಮುಖಪುಟಕ್ಕೆ ಸ್ವಾಗತ!",
+    "additional_content_header": "ಹೆಚ್ಚಿನ ಮಾಹಿತಿ",
+    "additional_content_placeholder": "ವಿಷಯ ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ..."
+  },
+  "speech": {
+    "mic_not_supported": "ನಿಮ್ಮ ಬ್ರೌಸರ್ ಆಡಿಯೊ ರೆಕಾರ್ಡಿಂಗ್ ಅನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.",
+    "requesting_permission": "ಮೈಕ್ರೊಫೋನ್ ಅನುಮತಿಗಾಗಿ ವಿನಂತಿಸಲಾಗುತ್ತಿದೆ...",
+    "no_supported_format": "ನಿಮ್ಮ ಬ್ರೌಸರ್ ಆದ್ಯತೆಯ ಆಡಿಯೊ ರೆಕಾರ್ಡಿಂಗ್ ಫಾರ್ಮ್ಯಾಟ್‌ಗಳಲ್ಲಿ (WAV, OGG, MP3, MP4) ಯಾವುದನ್ನೂ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ರೆಕಾರ್ಡಿಂಗ್ ಸಾಧ್ಯವಿಲ್ಲ.",
+    "recording_wav": "WAV ಫಾರ್ಮ್ಯಾಟ್‌ನಲ್ಲಿ ರೆಕಾರ್ಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+    "recording_format": "{{format}} ಫಾರ್ಮ್ಯಾಟ್‌ನಲ್ಲಿ ರೆಕಾರ್ಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+    "no_audio_data": "ಯಾವುದೇ ಆಡಿಯೊ ಡೇಟಾ ರೆಕಾರ್ಡ್ ಆಗಿಲ್ಲ.",
+    "recording_error": "ರೆಕಾರ್ಡಿಂಗ್ ದೋಷ: {{errorName}}",
+    "recording_in_progress": "ರೆಕಾರ್ಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ... ನಿಲ್ಲಿಸಲು ಮತ್ತೆ ಕ್ಲಿಕ್ ಮಾಡಿ.",
+    "mic_permission_denied": "ಮೈಕ್ರೊಫೋನ್ ಪ್ರವೇಶವನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಬ್ರೌಸರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಮೈಕ್ರೊಫೋನ್ ಪ್ರವೇಶವನ್ನು ಅನುಮತಿಸಿ.",
+    "mic_error": "ಮೈಕ್ರೊಫೋನ್ ಪ್ರವೇಶಿಸುವಲ್ಲಿ ದೋಷ: {{errorMessage}}",
+    "stopping_recording": "ರೆಕಾರ್ಡಿಂಗ್ ನಿಲ್ಲಿಸಲಾಗುತ್ತಿದೆ, ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗುತ್ತಿದೆ...",
+    "error_no_target_input": "ದೋಷ: SpeechComponent ಗೆ ಯಾವುದೇ ಗುರಿ ಇನ್‌ಪುಟ್ ಆಯ್ಕೆದಾರರನ್ನು ಒದಗಿಸಲಾಗಿಲ್ಲ.",
+    "sending_audio": "ಆಡಿಯೊವನ್ನು ಬ್ಯಾಕೆಂಡ್‌ಗೆ ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ...",
+    "transcription_received_updated": "ಲಿಪ್ಯಂತರವನ್ನು ಸ್ವೀಕರಿಸಲಾಗಿದೆ ಮತ್ತು ಇನ್‌ಪುಟ್ ಅನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ.",
+    "transcription_received_target_not_found": "ಲಿಪ್ಯಂತರವನ್ನು ಸ್ವೀಕರಿಸಲಾಗಿದೆ, ಆದರೆ ಗುರಿ ಇನ್‌ಪುಟ್ ಕಂಡುಬಂದಿಲ್ಲ.",
+    "invalid_transcription_format": "ಬ್ಯಾಕೆಂಡ್ ಮಾನ್ಯವಾದ ಲಿಪ್ಯಂತರವನ್ನು ಹಿಂತಿರುಗಿಸಲಿಲ್ಲ.",
+    "unknown_backend_error": "ಅಜ್ಞಾತ ಬ್ಯಾಕೆಂಡ್ ದೋಷ",
+    "backend_error_status": "ದೋಷ: ಬ್ಯಾಕೆಂಡ್ ದೋಷ: {{status}} {{backendErrorMessage}}",
+    "no_response_from_server": "ದೋಷ: ಸರ್ವರ್‌ನಿಂದ ಯಾವುದೇ ಪ್ರತಿಕ್ರಿಯೆ ಇಲ್ಲ. ನೆಟ್‌ವರ್ಕ್ ಅಥವಾ ಬ್ಯಾಕೆಂಡ್ ಪರಿಶೀಲಿಸಿ.",
+    "error_message": "ದೋಷ: {{errorMessage}}",
+    "start_recording_button": "ರೆಕಾರ್ಡಿಂಗ್ ಪ್ರಾರಂಭಿಸಿ",
+    "stop_recording_button": "ರೆಕಾರ್ಡಿಂಗ್ ನಿಲ್ಲಿಸಿ",
+    "mic_not_supported_message": "ನಿಮ್ಮ ಬ್ರೌಸರ್ ಆಡಿಯೊ ರೆಕಾರ್ಡಿಂಗ್ ಅನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ."
+  },
+  "chatbot": {
+    "please_enter_message": "ದಯವಿಟ್ಟು ಒಂದು ಸಂದೇಶವನ್ನು ನಮೂದಿಸಿ",
+    "unexpected_error": "ಅನಿರೀಕ್ಷಿತ ದೋಷ ಸಂಭವಿಸಿದೆ",
+    "title": "ಚಾಟ್ ಸಹಾಯಕ",
+    "welcome_message_title": "ಚಾಟ್ ಸಹಾಯಕಕ್ಕೆ ಸ್ವಾಗತ!",
+    "welcome_message_subtitle": "ಯಾವುದೇ ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳಿ ಮತ್ತು ಅದನ್ನು ಚೆನ್ನಾಗಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ನಾನು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತೇನೆ.",
+    "input_placeholder": "ಒಂದು ಪ್ರಶ್ನೆ ಕೇಳಿ...",
+    "send_button_aria_label": "ಸಂದೇಶ ಕಳುಹಿಸಿ",
+    "newTitle": "[Needs Translation] How have you been feeling lately?",
+    "activate_voice_input": "[Needs Translation] Activate Voice Input",
+    "deactivate_voice_input": "[Needs Translation] Deactivate Voice Input",
+    "voice_input_active_placeholder": "[Needs Translation] Voice input active. Say something..."
+  }
+}

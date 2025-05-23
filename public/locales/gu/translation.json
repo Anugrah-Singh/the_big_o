@@ -1,0 +1,72 @@
+{
+  "header": {
+    "home": "હોમ",
+    "about": "અમારા વિશે",
+    "doctors": "ડૉક્ટર્સ",
+    "pages": "પાના",
+    "blog": "બ્લોગ",
+    "contact": "સંપર્ક",
+    "hotline": "હોટલાઇન- 09856",
+    "title": "મારી એપ્લિકેશન",
+    "selectLanguage": "ભાષા પસંદ કરો",
+    "symptomChecker": "લક્ષણ ચેકર"
+  },
+  "languages": {
+    "en": "અંગ્રેજી",
+    "hi": "હિન્દી",
+    "bn": "બંગાળી",
+    "te": "તેલુગુ",
+    "mr": "મરાઠી",
+    "ta": "તામિલ",
+    "gu": "ગુજરાતી",
+    "kn": "કન્નડ",
+    "ml": "મલયાલમ"
+  },
+  "homePage": {
+    "careSubtitle": "અમે તમારી સંભાળ માટે અહીં છીએ",
+    "mainTitle": "શ્રેષ્ઠ સંભાળ અને ઉત્તમ ડૉક્ટર",
+    "description": "લોરેમ ઇપ્સમ ડોલર સીટ અમેટ, કોન્સેકટેટર એડિપિસિંગ એલિટ સેડ ડુ આઇઝમોડ ટેમ્પોર ઇન્સિડિડન્ટ યુટ લેબોર એટ ડોલોરે મેગ્ના એલિકા. ક્વિસ ઇપ્સમ સસ્પેન્ડિસ અલ્ટ્રિસીસ ગ્રેવિડા. રિસસ કમોડો વિવેરા મેકેનસ એક્યુમ્સન લેકસ વેલ ફેસિલિસિસ.",
+    "appointmentButton": "એપોઇન્ટમેન્ટ લો",
+    "welcome": "હોમ પેજ પર આપનું સ્વાગત છે!",
+    "additional_content_header": "વધુ માહિતી",
+    "additional_content_placeholder": "સામગ્રી ટૂંક સમયમાં આવી રહી છે..."
+  },
+  "speech": {
+    "mic_not_supported": "તમારું બ્રાઉઝર ઑડિઓ રેકોર્ડિંગને સમર્થન આપતું નથી.",
+    "requesting_permission": "માઇક્રોફોન પરવાનગીની વિનંતી કરી રહ્યાં છીએ...",
+    "no_supported_format": "તમારું બ્રાઉઝર પસંદગીના ઑડિઓ રેકોર્ડિંગ ફોર્મેટ (WAV, OGG, MP3, MP4) માંથી કોઈપણને સમર્થન આપતું નથી. રેકોર્ડિંગ શક્ય નથી.",
+    "recording_wav": "WAV ફોર્મેટમાં રેકોર્ડિંગ થઈ રહ્યું છે...",
+    "recording_format": "{{format}} ફોર્મેટમાં રેકોર્ડિંગ થઈ રહ્યું છે...",
+    "no_audio_data": "કોઈ ઑડિઓ ડેટા રેકોર્ડ થયો નથી.",
+    "recording_error": "રેકોર્ડિંગ ભૂલ: {{errorName}}",
+    "recording_in_progress": "રેકોર્ડિંગ ચાલી રહ્યું છે... રોકવા માટે ફરીથી ક્લિક કરો.",
+    "mic_permission_denied": "માઇક્રોફોન ઍક્સેસ નકારવામાં આવી. કૃપા કરીને તમારા બ્રાઉઝર સેટિંગ્સમાં માઇક્રોફોન ઍક્સેસને મંજૂરી આપો.",
+    "mic_error": "માઇક્રોફોનને ઍક્સેસ કરવામાં ભૂલ: {{errorMessage}}",
+    "stopping_recording": "રેકોર્ડિંગ રોકી રહ્યું છે, પ્રક્રિયા કરી રહ્યું છે...",
+    "error_no_target_input": "ભૂલ: SpeechComponent ને કોઈ લક્ષ્ય ઇનપુટ પસંદકર્તા પ્રદાન કરવામાં આવ્યો નથી.",
+    "sending_audio": "ઑડિઓ બેકએન્ડ પર મોકલી રહ્યું છે...",
+    "transcription_received_updated": "ટ્રાન્સક્રિપ્શન પ્રાપ્ત થયું અને ઇનપુટ અપડેટ થયું.",
+    "transcription_received_target_not_found": "ટ્રાન્સક્રિપ્શન પ્રાપ્ત થયું, પરંતુ લક્ષ્ય ઇનપુટ મળ્યું નથી.",
+    "invalid_transcription_format": "બેકએન્ડે માન્ય ટ્રાન્સક્રિપ્શન પરત કર્યું નથી.",
+    "unknown_backend_error": "અજ્ઞાત બેકએન્ડ ભૂલ",
+    "backend_error_status": "ભૂલ: બેકએન્ડ ભૂલ: {{status}} {{backendErrorMessage}}",
+    "no_response_from_server": "ભૂલ: સર્વર તરફથી કોઈ પ્રતિસાદ નથી. નેટવર્ક અથવા બેકએન્ડ તપાસો.",
+    "error_message": "ભૂલ: {{errorMessage}}",
+    "start_recording_button": "રેકોર્ડિંગ શરૂ કરો",
+    "stop_recording_button": "રેકોર્ડિંગ રોકો",
+    "mic_not_supported_message": "તમારું બ્રાઉઝર ઑડિઓ રેકોર્ડિંગને સમર્થન આપતું નથી."
+  },
+  "chatbot": {
+    "please_enter_message": "કૃપા કરીને એક સંદેશ દાખલ કરો",
+    "unexpected_error": "એક અણધારી ભૂલ આવી",
+    "title": "ચેટ સહાયક",
+    "welcome_message_title": "ચેટ સહાયકમાં આપનું સ્વાગત છે!",
+    "welcome_message_subtitle": "કોઈપણ પ્રશ્નો પૂછો અને હું તમને તેને વધુ સારી રીતે સમજવામાં મદદ કરીશ.",
+    "input_placeholder": "એક પ્રશ્ન પૂછો...",
+    "send_button_aria_label": "સંદેશ મોકલો",
+    "newTitle": "તમે છેલ્લે કેવી રીતે અનુભવી રહ્યા છો?",
+    "activate_voice_input": "વોઇસ ઇનપુટ સક્રિય કરો",
+    "deactivate_voice_input": "વોઇસ ઇનપુટ નિષ્ક્રિય કરો",
+    "voice_input_active_placeholder": "વોઇસ ઇનપુટ સક્રિય છે. કંઈક કહો..."
+  }
+}

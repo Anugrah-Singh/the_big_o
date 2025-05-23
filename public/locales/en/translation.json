@@ -1,0 +1,72 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "doctors": "Doctors",
+    "pages": "Pages",
+    "blog": "Blog",
+    "contact": "Contact",
+    "hotline": "HOT LINE- 09856",
+    "title": "My App",
+    "selectLanguage": "Select Language",
+    "symptomChecker": "Symptom Checker"
+  },
+  "languages": {
+    "en": "English",
+    "hi": "Hindi",
+    "bn": "Bengali",
+    "te": "Telugu",
+    "mr": "Marathi",
+    "ta": "Tamil",
+    "gu": "Gujarati",
+    "kn": "Kannada",
+    "ml": "Malayalam"
+  },
+  "homePage": {
+    "careSubtitle": "We Are Here For Your Care",
+    "mainTitle": "Best Care & Better Doctor",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus cmodo viverra maecenas accumsan lacus vel facilisis.",
+    "appointmentButton": "MAKE AN APPOINTMENT",
+    "welcome": "Welcome to the Home Page!",
+    "additional_content_header": "More Information",
+    "additional_content_placeholder": "Content coming soon..."
+  },
+  "speech": {
+    "mic_not_supported": "Audio recording is not supported by your browser.",
+    "requesting_permission": "Requesting microphone permission...",
+    "no_supported_format": "Your browser does not support any of the preferred audio recording formats (WAV, OGG, MP3, MP4). Recording is not possible.",
+    "recording_wav": "Recording in WAV format...",
+    "recording_format": "Recording in {{format}} format...",
+    "no_audio_data": "No audio data recorded.",
+    "recording_error": "Recording error: {{errorName}}",
+    "recording_in_progress": "Recording... Click again to stop.",
+    "mic_permission_denied": "Microphone access denied. Please allow microphone access in your browser settings.",
+    "mic_error": "Error accessing microphone: {{errorMessage}}",
+    "stopping_recording": "Stopping recording, processing...",
+    "error_no_target_input": "Error: No target input selector provided to SpeechComponent.",
+    "sending_audio": "Sending audio to backend...",
+    "transcription_received_updated": "Transcription received and input updated.",
+    "transcription_received_target_not_found": "Transcription received, but target input not found.",
+    "invalid_transcription_format": "Backend did not return a valid transcription.",
+    "unknown_backend_error": "Unknown backend error",
+    "backend_error_status": "Error: Backend error: {{status}} {{backendErrorMessage}}",
+    "no_response_from_server": "Error: No response from server. Check network or backend.",
+    "error_message": "Error: {{errorMessage}}",
+    "start_recording_button": "Start Recording",
+    "stop_recording_button": "Stop Recording",
+    "mic_not_supported_message": "Audio recording is not supported by your browser."
+  },
+  "chatbot": {
+    "please_enter_message": "Please enter a message",
+    "unexpected_error": "An unexpected error occurred",
+    "title": "Chat Assistant",
+    "welcome_message_title": "Welcome to the Chat Assistant!",
+    "welcome_message_subtitle": "Ask any questions and I'll help you understand it better.",
+    "input_placeholder": "Ask a question...",
+    "send_button_aria_label": "Send message",
+    "newTitle": "How have you been feeling lately?",
+    "activate_voice_input": "Activate Voice Input",
+    "deactivate_voice_input": "Deactivate Voice Input",
+    "voice_input_active_placeholder": "Voice input active. Say something..."
+  }
+}
