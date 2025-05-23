@@ -1,0 +1,72 @@
+{
+  "header": {
+    "home": "হোম",
+    "about": "আমাদের সম্পর্কে",
+    "doctors": "ডাক্তার",
+    "pages": "পৃষ্ঠা",
+    "blog": "ব্লগ",
+    "contact": "যোগাযোগ",
+    "hotline": "হটলাইন- 09856",
+    "title": "আমার অ্যাপ",
+    "selectLanguage": "ভাষা নির্বাচন করুন",
+    "symptomChecker": "লক্ষণ চেকার"
+  },
+  "languages": {
+    "en": "ইংরেজি",
+    "hi": "হিন্দি",
+    "bn": "বাংলা",
+    "te": "తెలుగు",
+    "mr": "मराठी",
+    "ta": "தமிழ்",
+    "gu": "ગુજરાતી",
+    "kn": "ಕನ್ನಡ",
+    "ml": "മലയാളം"
+  },
+  "homePage": {
+    "careSubtitle": "আমরা আপনার যত্নের জন্য এখানে আছি",
+    "mainTitle": "সেরা যত্ন এবং আরও ভাল ডাক্তার",
+    "description": "লোরেম ইপসাম ডলোর সিট আমেট, কনসেক্টেচার এডিপিসিং এলিট সেড ডু ইইউসমোড টেম্পর ইনসিডিন্ট ইউটি ল্যাবরে এট ডলোর ম্যাগনা আলিকুয়া। কুইস ইপসাম সাসপেন্ডিস আলট্রিসিস গ্রাভিডা। রিসাস কমোডো ভিভেরা ম্যাকেনাস অ্যাকুমসান ল্যাকাস ভেল ফ্যাসিলিসিস।",
+    "appointmentButton": "অ্যাপয়েন্টমেন্ট করুন",
+    "welcome": "হোম পেজে স্বাগতম!",
+    "additional_content_header": "আরও তথ্য",
+    "additional_content_placeholder": "বিষয়বস্তু শীঘ্রই আসছে..."
+  },
+  "speech": {
+    "mic_not_supported": "আপনার ব্রাউজার অডিও রেকর্ডিং সমর্থন করে না।",
+    "requesting_permission": "মাইক্রোফোন অনুমতির জন্য অনুরোধ করা হচ্ছে...",
+    "no_supported_format": "আপনার ব্রাউজার পছন্দের অডিও রেকর্ডিং ফর্ম্যাটগুলির (WAV, OGG, MP3, MP4) কোনোটিই সমর্থন করে না। রেকর্ডিং সম্ভব নয়।",
+    "recording_wav": "WAV ফর্ম্যাটে রেকর্ডিং হচ্ছে...",
+    "recording_format": "{{format}} ফর্ম্যাটে রেকর্ডিং হচ্ছে...",
+    "no_audio_data": "কোনো অডিও ডেটা রেকর্ড করা হয়নি।",
+    "recording_error": "রেকর্ডিং ত্রুটি: {{errorName}}",
+    "recording_in_progress": "রেকর্ডিং চলছে... থামাতে আবার ক্লিক করুন।",
+    "mic_permission_denied": "মাইক্রোফোন অ্যাক্সেস अस्वीकृत। অনুগ্রহ করে আপনার ব্রাউজার সেটিংসে মাইক্রোফোন অ্যাক্সেসের অনুমতি দিন।",
+    "mic_error": "মাইক্রোফোন অ্যাক্সেস করতে ত্রুটি: {{errorMessage}}",
+    "stopping_recording": "রেকর্ডিং থামাচ্ছে, প্রসেস করা হচ্ছে...",
+    "error_no_target_input": "ত্রুটি: SpeechComponent-এ কোনো টার্গেট ইনপুট সিলেক্টর দেওয়া হয়নি।",
+    "sending_audio": "ব্যাকএন্ডে অডিও পাঠানো হচ্ছে...",
+    "transcription_received_updated": "ট্রান্সক্রিপশন পাওয়া গেছে এবং ইনপুট আপডেট করা হয়েছে।",
+    "transcription_received_target_not_found": "ট্রান্সক্রিপশন পাওয়া গেছে, কিন্তু টার্গেট ইনপুট পাওয়া যায়নি।",
+    "invalid_transcription_format": "ব্যাকএন্ড একটি বৈধ ট্রান্সক্রিপশন ফেরত দেয়নি।",
+    "unknown_backend_error": "অজানা ব্যাকএন্ড ত্রুটি",
+    "backend_error_status": "ত্রুটি: ব্যাকএন্ড ত্রুটি: {{status}} {{backendErrorMessage}}",
+    "no_response_from_server": "ত্রুটি: সার্ভার থেকে কোনো প্রতিক্রিয়া নেই। নেটওয়ার্ক বা ব্যাকএন্ড পরীক্ষা করুন।",
+    "error_message": "ত্রুটি: {{errorMessage}}",
+    "start_recording_button": "রেকর্ডিং শুরু করুন",
+    "stop_recording_button": "রেকর্ডিং বন্ধ করুন",
+    "mic_not_supported_message": "আপনার ব্রাউজার অডিও রেকর্ডিং সমর্থন করে না।"
+  },
+  "chatbot": {
+    "please_enter_message": "অনুগ্রহ করে একটি বার্তা লিখুন",
+    "unexpected_error": "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে",
+    "title": "চ্যাট সহকারী",
+    "welcome_message_title": "চ্যাট সহকারীতে স্বাগতম!",
+    "welcome_message_subtitle": "যেকোনো প্রশ্ন জিজ্ঞাসা করুন এবং আমি আপনাকে এটি আরও ভালভাবে বুঝতে সাহায্য করব।",
+    "input_placeholder": "একটি প্রশ্ন জিজ্ঞাসা করুন...",
+    "send_button_aria_label": "বার্তা পাঠান",
+    "newTitle": "আপনি কেমন অনুভব করছেন?",
+    "activate_voice_input": "কণ্ঠ ইনপুট সক্রিয় করুন",
+    "deactivate_voice_input": "কণ্ঠ ইনপুট নিষ্ক্রিয় করুন",
+    "voice_input_active_placeholder": "কণ্ঠ ইনপুট সক্রিয়। কিছু বলুন..."
+  }
+}

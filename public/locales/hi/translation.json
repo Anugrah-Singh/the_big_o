@@ -1,0 +1,72 @@
+{
+  "header": {
+    "home": "होम",
+    "about": "हमारे बारे में",
+    "doctors": "डॉक्टर",
+    "pages": "पेज",
+    "blog": "ब्लॉग",
+    "contact": "संपर्क करें",
+    "hotline": "हॉटलाइन- 09856",
+    "title": "मेरा ऐप",
+    "selectLanguage": "भाषा चुनें",
+    "symptomChecker": "लक्षण परीक्षक"
+  },
+  "languages": {
+    "en": "अंग्रेज़ी",
+    "hi": "हिन्दी",
+    "bn": "बंगाली",
+    "te": "तेलुगू",
+    "mr": "मराठी",
+    "ta": "तमिल",
+    "gu": "गुजराती",
+    "kn": "कन्नड़",
+    "ml": "मलयालम"
+  },
+  "homePage": {
+    "careSubtitle": "हम आपकी देखभाल के लिए यहां हैं",
+    "mainTitle": "सर्वश्रेष्ठ देखभाल और बेहतर डॉक्टर",
+    "description": "लोरेम इप्सम डोलर सिट एमेट, कॉनसेक्टेचर एडिपिसिंग एलीट सेड डू आइस्मोड टेम्पोर इनसिडिडंट यूट लेबोर एट डोलोरे मैग्ना एलिका। क्विस इप्सम सस्पेंडिस अल्ट्रिसेस ग्रेविडा। रिसस कमोडो विवर्रा मेकेनस एक्यूम्सन लैकस वेल फैसिलिसिस।",
+    "appointmentButton": "अपॉइंटमेंट लें",
+    "welcome": "होम पेज पर आपका स्वागत है!",
+    "additional_content_header": "और जानकारी",
+    "additional_content_placeholder": "सामग्री जल्द ही आ रही है..."
+  },
+  "speech": {
+    "mic_not_supported": "आपका ब्राउज़र ऑडियो रिकॉर्डिंग का समर्थन नहीं करता है।",
+    "requesting_permission": "माइक्रोफ़ोन अनुमति का अनुरोध किया जा रहा है...",
+    "no_supported_format": "आपका ब्राउज़र पसंदीदा ऑडियो रिकॉर्डिंग प्रारूपों (WAV, OGG, MP3, MP4) में से किसी का भी समर्थन नहीं करता है। रिकॉर्डिंग संभव नहीं है।",
+    "recording_wav": "WAV प्रारूप में रिकॉर्डिंग हो रही है...",
+    "recording_format": "{{format}} प्रारूप में रिकॉर्डिंग हो रही है...",
+    "no_audio_data": "कोई ऑडियो डेटा रिकॉर्ड नहीं किया गया।",
+    "recording_error": "रिकॉर्डिंग त्रुटि: {{errorName}}",
+    "recording_in_progress": "रिकॉर्डिंग हो रही है... रोकने के लिए फिर से क्लिक करें।",
+    "mic_permission_denied": "माइक्रोफ़ोन एक्सेस अस्वीकृत। कृपया अपनी ब्राउज़र सेटिंग्स में माइक्रोफ़ोन एक्सेस की अनुमति दें।",
+    "mic_error": "माइक्रोफ़ोन एक्सेस करने में त्रुटि: {{errorMessage}}",
+    "stopping_recording": "रिकॉर्डिंग रोक दी जा रही है, प्रसंस्करण हो रहा है...",
+    "error_no_target_input": "त्रुटि: SpeechComponent को कोई लक्ष्य इनपुट चयनकर्ता प्रदान नहीं किया गया।",
+    "sending_audio": "ऑडियो बैकएंड को भेजा जा रहा है...",
+    "transcription_received_updated": "ट्रांसक्रिप्शन प्राप्त हुआ और इनपुट अपडेट किया गया।",
+    "transcription_received_target_not_found": "ट्रांसक्रिप्शन प्राप्त हुआ, लेकिन लक्ष्य इनपुट नहीं मिला।",
+    "invalid_transcription_format": "बैकएंड ने एक वैध ट्रांसक्रिप्शन नहीं लौटाया।",
+    "unknown_backend_error": "अज्ञात बैकएंड त्रुटि",
+    "backend_error_status": "त्रुटि: बैकएंड त्रुटि: {{status}} {{backendErrorMessage}}",
+    "no_response_from_server": "त्रुटि: सर्वर से कोई प्रतिक्रिया नहीं। नेटवर्क या बैकएंड की जाँच करें।",
+    "error_message": "त्रुटि: {{errorMessage}}",
+    "start_recording_button": "रिकॉर्डिंग शुरू करें",
+    "stop_recording_button": "रिकॉर्डिंग रोकें",
+    "mic_not_supported_message": "आपका ब्राउज़र ऑडियो रिकॉर्डिंग का समर्थन नहीं करता है।"
+  },
+  "chatbot": {
+    "please_enter_message": "कृपया एक संदेश दर्ज करें",
+    "unexpected_error": "एक अप्रत्याशित त्रुटि हुई",
+    "title": "चैट सहायक",
+    "welcome_message_title": "चैट सहायक में आपका स्वागत है!",
+    "welcome_message_subtitle": "कोई भी प्रश्न पूछें और मैं आपको इसे बेहतर ढंग से समझने में मदद करूँगा।",
+    "input_placeholder": "एक प्रश्न पूछें...",
+    "send_button_aria_label": "संदेश भेजें",
+    "newTitle": "आप हाल ही में कैसा महसूस कर रहे हैं?",
+    "activate_voice_input": "वॉइस इनपुट सक्रिय करें",
+    "deactivate_voice_input": "वॉइस इनपुट निष्क्रिय करें",
+    "voice_input_active_placeholder": "वॉइस इनपुट सक्रिय है। कुछ कहो..."
+  }
+}
