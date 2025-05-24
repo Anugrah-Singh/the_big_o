@@ -8,19 +8,21 @@
     "contact": "ബന്ധപ്പെടുക",
     "hotline": "ഹോട്ട്‌ലൈൻ- 09856",
     "title": "എന്റെ ആപ്പ്",
-    "selectLanguage": "[Needs Translation] Select Language",
-    "symptomChecker": "[Needs Translation] Symptom Checker"
+    "selectLanguage": "ഭാഷ തിരഞ്ഞെടുക്കുക",
+    "symptomChecker": "ലക്ഷണ പരിശോധകൻ",
+    "login": "ലോഗിൻ",
+    "logout": "ലോഗ് ഔട്ട്"
   },
   "languages": {
-    "en": "[Needs Translation] English",
-    "hi": "[Needs Translation] Hindi",
-    "bn": "[Needs Translation] Bengali",
-    "te": "[Needs Translation] Telugu",
-    "mr": "[Needs Translation] Marathi",
-    "ta": "[Needs Translation] Tamil",
-    "gu": "[Needs Translation] Gujarati",
-    "kn": "[Needs Translation] Kannada",
-    "ml": "[Needs Translation] Malayalam"
+    "en": "ഇംഗ്ലീഷ്",
+    "hi": "ഹിന്ദി",
+    "bn": "ബംഗാളി",
+    "te": "തെലുങ്ക്",
+    "mr": "മറാത്തി",
+    "ta": "തമിഴ്",
+    "gu": "ഗുജറാത്തി",
+    "kn": "കന്നഡ",
+    "ml": "മലയാളം"
   },
   "homePage": {
     "careSubtitle": "നിങ്ങളുടെ പരിചരണത്തിനായി ഞങ്ങൾ ഇവിടെയുണ്ട്",
@@ -64,9 +66,26 @@
     "welcome_message_subtitle": "ഏത് ചോദ്യങ്ങളും ചോദിക്കൂ, അത് നന്നായി മനസ്സിലാക്കാൻ ഞാൻ നിങ്ങളെ സഹായിക്കാം.",
     "input_placeholder": "ഒരു ചോദ്യം ചോദിക്കൂ...",
     "send_button_aria_label": "സന്ദേശം അയക്കൂ",
-    "newTitle": "[Needs Translation] How have you been feeling lately?",
-    "activate_voice_input": "[Needs Translation] Activate Voice Input",
-    "deactivate_voice_input": "[Needs Translation] Deactivate Voice Input",
-    "voice_input_active_placeholder": "[Needs Translation] Voice input active. Say something..."
+    "newTitle": "നിങ്ങൾ അടുത്തിടെ എങ്ങനെ അനുഭവിക്കുന്നു?",
+    "activate_voice_input": "വോയിസ് ഇൻപുട്ട് സജീവമാക്കുക",
+    "deactivate_voice_input": "വോയിസ് ഇൻപുട്ട് നിർജ്ജീവമാക്കുക",
+    "voice_input_active_placeholder": "വോയിസ് ഇൻപുട്ട് സജീവമാണ്. എന്തെങ്കിലും പറയൂ...",
+    "received_data_summary": "ഞാൻ വിവരങ്ങൾ പ്രോസസ്സ് ചെയ്തു. ഞാൻ മറ്റെന്തെങ്കിലും സഹായിക്കാമോ?",
+    "received_data_summary_v2": "ശരി, നിങ്ങൾ '{{symptom}}' എന്ന് പറഞ്ഞതായി ഞാൻ ശ്രദ്ധിച്ചു. കൂടുതൽ പറയാമോ?",
+    "default_reply": "ക്ഷമിക്കണം, ഞാൻ മനസ്സിലാക്കാൻ കഴിയാത്ത ഒരു പ്രതികരണം ലഭിച്ചു."
+  },
+  "summaryPage": {
+    "title": "ആലോചന സംഗ്രഹം",
+    "noDataTitle": "സംഗ്രഹ ഡാറ്റ ലഭ്യമല്ല",
+    "noDataText": "നിങ്ങളുടെ സംഗ്രഹം ലഭ്യമാക്കുന്നതിൽ പ്രശ്നമുണ്ടായി. ദയവായി വീണ്ടും ശ്രമിക്കുക അല്ലെങ്കിൽ പിന്തുണയെ ബന്ധപ്പെടുക.",
+    "goHomeButton": "ഹോം പേജിലേക്ക് പോകുക",
+    "summaryReportTitle": "സംഗ്രഹ റിപ്പോർട്ട്",
+    "possibleRemediesTitle": "സാധ്യമായ പരിഹാരങ്ങൾ",
+    "diagnosticsTestsTitle": "നിർദ്ദേശിച്ച ഡയഗ്നോസ്റ്റിക് പരിശോധനകൾ",
+    "bookAppointmentButton": "അപ്പോയിന്റ്മെന്റ് ബുക്ക് ചെയ്യുക",
+    "bookAppointmentAlert": "അപ്പോയിന്റ്മെന്റ് ബുക്കിംഗ് പ്രവർത്തനം ഇവിടെ നടപ്പിലാക്കും.",
+    "defaultSummary": "സംഗ്രഹം നൽകിയിട്ടില്ല.",
+    "defaultPatientName": "രോഗി",
+    "forPatient": "ഇതിനായി: {{name}}"
   }
 }

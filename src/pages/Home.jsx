@@ -17,9 +17,9 @@ const Home = () => {
           <p className="text-gray-700 mb-8 leading-relaxed">
             {t('homePage.description')}
           </p>
-          <button className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-10 py-4 rounded-md text-lg font-medium shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+          {/* <button className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-10 py-4 rounded-md text-lg font-medium shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
             {t('homePage.appointmentButton')}
-          </button>
+          </button> */}
         </div>
 
         {/* Image Content */}

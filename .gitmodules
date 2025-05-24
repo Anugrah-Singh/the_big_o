@@ -1,0 +1,3 @@
+[submodule "dr_assistant"]
+	path = dr_assistant
+	url = https://github.com/Anugrah-Singh/dr_assistant.git

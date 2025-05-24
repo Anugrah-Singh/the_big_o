@@ -9,7 +9,9 @@
     "hotline": "हॉटलाइन- 09856",
     "title": "माझे अॅप",
     "selectLanguage": "[Needs Translation] Select Language",
-    "symptomChecker": "[Needs Translation] Symptom Checker"
+    "symptomChecker": "[Needs Translation] Symptom Checker",
+    "login": "लॉगिन",
+    "logout": "लॉगआउट"
   },
   "languages": {
     "en": "[Needs Translation] English",
@@ -67,6 +69,23 @@
     "newTitle": "[Needs Translation] How have you been feeling lately?",
     "activate_voice_input": "[Needs Translation] Activate Voice Input",
     "deactivate_voice_input": "[Needs Translation] Deactivate Voice Input",
-    "voice_input_active_placeholder": "[Needs Translation] Voice input active. Say something..."
+    "voice_input_active_placeholder": "[Needs Translation] Voice input active. Say something...",
+    "received_data_summary": "मी माहिती प्रक्रिया केली आहे. मी आणखी काही मदत करू शकतो का?",
+    "received_data_summary_v2": "ठीक आहे, आपण '{{symptom}}' नमूद केले आहे हे मी लक्षात घेतले आहे. आपण आणखी काही सांगू शकता का?",
+    "default_reply": "माफ करा, मला समजू न शकणारा प्रतिसाद मिळाला."
+  },
+  "summaryPage": {
+    "title": "सल्ला सारांश",
+    "noDataTitle": "कोणताही सारांश डेटा उपलब्ध नाही",
+    "noDataText": "आपला सारांश मिळवण्यात समस्या आली आहे. कृपया पुन्हा प्रयत्न करा किंवा समर्थनाशी संपर्क साधा.",
+    "goHomeButton": "मुख्यपृष्ठावर जा",
+    "summaryReportTitle": "सारांश अहवाल",
+    "possibleRemediesTitle": "संभाव्य उपाय",
+    "diagnosticsTestsTitle": "सूचवलेली निदान चाचणी",
+    "bookAppointmentButton": "अपॉइंटमेंट बुक करा",
+    "bookAppointmentAlert": "अपॉइंटमेंट बुकिंग कार्यक्षमता येथे लागू केली जाईल.",
+    "defaultSummary": "कोणताही सारांश दिला नाही.",
+    "defaultPatientName": "रुग्ण",
+    "forPatient": "साठी: {{name}}"
   }
 }

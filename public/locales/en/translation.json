@@ -9,7 +9,8 @@
     "hotline": "HOT LINE- 09856",
     "title": "My App",
     "selectLanguage": "Select Language",
-    "symptomChecker": "Symptom Checker"
+    "symptomChecker": "Symptom Checker",
+    "login": "Login"
   },
   "languages": {
     "en": "English",
@@ -67,6 +68,23 @@
     "newTitle": "How have you been feeling lately?",
     "activate_voice_input": "Activate Voice Input",
     "deactivate_voice_input": "Deactivate Voice Input",
-    "voice_input_active_placeholder": "Voice input active. Say something..."
+    "voice_input_active_placeholder": "Voice input active. Say something...",
+    "received_data_summary": "I've processed the information. Is there anything else I can help with?",
+    "received_data_summary_v2": "Okay, I have noted that you mentioned '{{symptom}}'. Can you tell me more?",
+    "default_reply": "Sorry, I received a response I couldn't understand."
+  },
+  "summaryPage": {
+    "title": "Consultation Summary",
+    "noDataTitle": "No Summary Data Available",
+    "noDataText": "It seems there was an issue retrieving your summary. Please try again or contact support.",
+    "goHomeButton": "Go to Home",
+    "summaryReportTitle": "Summary Report",
+    "possibleRemediesTitle": "Possible Remedies",
+    "diagnosticsTestsTitle": "Suggested Diagnostic Tests",
+    "bookAppointmentButton": "Book an Appointment",
+    "bookAppointmentAlert": "Appointment booking functionality will be implemented here.",
+    "defaultSummary": "No summary provided.",
+    "defaultPatientName": "Patient",
+    "forPatient": "For: {{name}}"
   }
 }

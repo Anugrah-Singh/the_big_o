@@ -9,7 +9,9 @@
     "hotline": "હોટલાઇન- 09856",
     "title": "મારી એપ્લિકેશન",
     "selectLanguage": "ભાષા પસંદ કરો",
-    "symptomChecker": "લક્ષણ ચેકર"
+    "symptomChecker": "લક્ષણ ચેકર",
+    "login": "લૉગિન",
+    "logout": "લૉગઆઉટ"
   },
   "languages": {
     "en": "અંગ્રેજી",
@@ -67,6 +69,35 @@
     "newTitle": "તમે છેલ્લે કેવી રીતે અનુભવી રહ્યા છો?",
     "activate_voice_input": "વોઇસ ઇનપુટ સક્રિય કરો",
     "deactivate_voice_input": "વોઇસ ઇનપુટ નિષ્ક્રિય કરો",
-    "voice_input_active_placeholder": "વોઇસ ઇનપુટ સક્રિય છે. કંઈક કહો..."
+    "voice_input_active_placeholder": "વોઇસ ઇનપુટ સક્રિય છે. કંઈક કહો...",
+    "received_data_summary": "હું માહિતી પ્રક્રિયા કરી છે. શું હું બીજું કંઈ મદદ કરી શકું?",
+    "received_data_summary_v2": "બરાબર, મેં નોંધ્યું છે કે તમે '{{symptom}}' જણાવ્યું છે. તમે વધુ કહી શકો છો?",
+    "default_reply": "માફ કરો, મને એવું પ્રતિસાદ મળ્યું છે જે હું સમજી શક્યો નહીં."
+  },
+  "summaryPage": {
+    "title": "પરામર્શ સારાંશ",
+    "noDataTitle": "કોઈ સારાંશ ડેટા ઉપલબ્ધ નથી",
+    "noDataText": "તમારો સારાંશ મેળવવામાં સમસ્યા આવી છે. કૃપા કરીને ફરી પ્રયાસ કરો અથવા સપોર્ટનો સંપર્ક કરો.",
+    "goHomeButton": "હોમ પર જાઓ",
+    "summaryReportTitle": "સારાંશ રિપોર્ટ",
+    "possibleRemediesTitle": "શક્ય તેટલા ઉપાય",
+    "diagnosticsTestsTitle": "સૂચવાયેલા ડાયગ્નોસ્ટિક ટેસ્ટ",
+    "bookAppointmentButton": "અપોઇન્ટમેન્ટ બુક કરો",
+    "bookAppointmentAlert": "અપોઇન્ટમેન્ટ બુકિંગ કાર્યક્ષમતા અહીં અમલમાં મૂકવામાં આવશે.",
+    "defaultSummary": "કોઈ સારાંશ આપવામાં આવ્યો નથી.",
+    "defaultPatientName": "રોગી",
+    "forPatient": "માટે: {{name}}"
+  },
+  "loginPage": {
+    "title": "લોગિન",
+    "subtitle": "તમારા એકાઉન્ટમાં પ્રવેશ કરો",
+    "usernameLabel": "વપરાશકર્તા નામ",
+    "usernamePlaceholder": "તમારું વપરાશકર્તા નામ દાખલ કરો",
+    "passwordLabel": "પાસવર્ડ",
+    "passwordPlaceholder": "તમારો પાસવર્ડ દાખલ કરો",
+    "loginButton": "લોગિન",
+    "invalidCredentials": "અમાન્ય ઓળખપત્રો. કૃપા કરીને ફરીથી પ્રયાસ કરો.",
+    "loginSuccess": "સફળતાપૂર્વક લોગિન થયા!",
+    "testCredentials": "પરીક્ષા ઓળખપત્રો: patient/password123"
   }
 }
