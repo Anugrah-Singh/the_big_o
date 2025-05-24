@@ -10,7 +10,7 @@ const SpeechComponent = ({ onRecordingEnd }) => { // Removed targetInputSelector
   const streamRef = useRef(null);
 
   const backendUrl = import.meta.env.VITE_BACKEND_API_URL
-    ? `${import.meta.env.VITE_BACKEND_API_URL.replace(/\/$/, '')}/translate`
+    ? `${import.meta.env.VITE_BACKEND_API_URL.replace(/\/$/, '')}/transcribe`
     : '/transcribe';
 
   useEffect(() => {
@@ -153,7 +153,23 @@ const SpeechComponent = ({ onRecordingEnd }) => { // Removed targetInputSelector
     }
 
     formData.append('audio', audioBlob, `recording.${fileExtension}`);
-    formData.append('language', i18n.language);
+    
+    // Map language code to full name
+    const languageCodeToFullName = {
+      en: 'English',
+      hi: 'Hindi',
+      bn: 'Bengali',
+      te: 'Telugu',
+      mr: 'Marathi',
+      ta: 'Tamil',
+      gu: 'Gujarati',
+      kn: 'Kannada',
+      ml: 'Malayalam',
+    };
+    const currentLangCode = i18n.language;
+    const fullLanguageName = languageCodeToFullName[currentLangCode] || currentLangCode; // Fallback to code if not found
+
+    formData.append('language', fullLanguageName);
     
     try {
       console.log(t('speech.sending_audio'));
