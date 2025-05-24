@@ -113,12 +113,43 @@ const ChatBot = () => {
 
       // Check for completion and redirect
       if (data && data.complete === true) {
+        let finalSummaryReport;
+        const templateSource = data.updated_template || currentSymptomData;
+
+        if (templateSource && typeof templateSource === 'object') {
+          const { name, age, symptoms, medical_history } = templateSource;
+          let summaryString = `Patient Name: ${name || 'N/A'}\nAge: ${age || 'N/A'}\n\nSymptoms:\n`;
+          if (symptoms && symptoms.length > 0) {
+            symptoms.forEach(symptom => {
+              summaryString += `  - ${symptom.symptom || 'N/A'}`;
+              if (symptom.location) summaryString += ` (Location: ${symptom.location})`;
+              if (symptom.onset) summaryString += ` (Onset: ${symptom.onset})`;
+              if (symptom.severity) summaryString += ` (Severity: ${symptom.severity})`;
+              summaryString += '\n';
+            });
+          } else {
+            summaryString += '  No symptoms detailed.\n';
+          }
+          summaryString += '\nMedical History:\n';
+          if (medical_history) {
+            summaryString += `  Known Conditions: ${(medical_history.conditions && medical_history.conditions.length > 0) ? medical_history.conditions.join(', ') : 'None'}\n`;
+            summaryString += `  Allergies: ${(medical_history.allergies && medical_history.allergies.length > 0) ? medical_history.allergies.join(', ') : 'None'}\n`;
+          } else {
+            summaryString += '  No medical history detailed.\n';
+          }
+          finalSummaryReport = summaryString;
+        } else if (data.summary_report) {
+          finalSummaryReport = data.summary_report;
+        } else {
+          finalSummaryReport = t('summaryPage.defaultSummary', 'No summary provided.');
+        }
+
         navigate('/summary', { 
           state: { 
-            summaryReport: data.summary_report, 
+            summaryReport: finalSummaryReport, 
             possibleRemedies: data.possible_remedies, 
             diagnosticsTests: data.diagnostics_tests,
-            patientName: currentSymptomData.name || t('summaryPage.defaultPatientName', 'Patient') 
+            patientName: templateSource.name || currentSymptomData.name || t('summaryPage.defaultPatientName', 'Patient') 
           } 
         });
         return; // Stop further processing in handleSubmit
