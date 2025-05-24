@@ -195,6 +195,7 @@ const SpeechComponent = ({ onRecordingEnd }) => { // Removed targetInputSelector
 
   return (
     <button
+      type="button" // Add type="button" to prevent form submission on Enter key press
       onClick={isRecording ? handleStopRecording : handleStartRecording}
       disabled={!canRecord}
       className={`text-white font-semibold uppercase py-2 px-4 sm:py-3 sm:px-5 rounded-lg shadow-md transition-colors duration-150 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-opacity-50 ${

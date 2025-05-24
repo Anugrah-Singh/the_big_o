@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import SpeechTestPage from "./pages/SpeechTestPage";
 import ChatBot from './components/ChatBot'; // Import ChatBot
+import LoginPage from './pages/LoginPage'; // Import LoginPage
+import SummaryPage from './pages/SummaryPage'; // Import SummaryPage
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/speech-test" element={<SpeechTestPage />} />
           <Route path="/chatbot" element={<ChatBot />} /> {/* Add route for ChatBot */}
+          <Route path="/login" element={<LoginPage />} /> {/* Add route for LoginPage */}
+          <Route path="/summary" element={<SummaryPage />} /> {/* Add route for SummaryPage */}
         </Routes>
       </div>
     </>

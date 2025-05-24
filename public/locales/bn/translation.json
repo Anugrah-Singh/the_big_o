@@ -9,7 +9,9 @@
     "hotline": "হটলাইন- 09856",
     "title": "আমার অ্যাপ",
     "selectLanguage": "ভাষা নির্বাচন করুন",
-    "symptomChecker": "লক্ষণ চেকার"
+    "symptomChecker": "লক্ষণ চেকার",
+    "login": "লগইন",
+    "logout": "লগআউট"
   },
   "languages": {
     "en": "ইংরেজি",
@@ -67,6 +69,35 @@
     "newTitle": "আপনি কেমন অনুভব করছেন?",
     "activate_voice_input": "কণ্ঠ ইনপুট সক্রিয় করুন",
     "deactivate_voice_input": "কণ্ঠ ইনপুট নিষ্ক্রিয় করুন",
-    "voice_input_active_placeholder": "কণ্ঠ ইনপুট সক্রিয়। কিছু বলুন..."
+    "voice_input_active_placeholder": "কণ্ঠ ইনপুট সক্রিয়। কিছু বলুন...",
+    "received_data_summary": "আমি তথ্য প্রক্রিয়া করেছি। আর কোনো বিষয়ে আমি সাহায্য করতে পারি?",
+    "received_data_summary_v2": "ঠিক আছে, আমি লক্ষ করেছি যে আপনি '{{symptom}}' উল্লেখ করেছেন। আপনি আরো বলতে পারেন?",
+    "default_reply": "দুঃখিত, আমি এমন একটি উত্তর পেয়েছি যা আমি বুঝতে পারিনি।"
+  },
+  "summaryPage": {
+    "title": "পরামর্শের সারাংশ",
+    "noDataTitle": "কোনো সারাংশ ডেটা পাওয়া যায়নি",
+    "noDataText": "আপনার সারাংশ পুনরুদ্ধার করতে সমস্যা হয়েছে বলে মনে হচ্ছে। অনুগ্রহ করে আবার চেষ্টা করুন বা সাহায্যের জন্য যোগাযোগ করুন।",
+    "goHomeButton": "হোমে যান",
+    "summaryReportTitle": "সারাংশ রিপোর্ট",
+    "possibleRemediesTitle": "সম্ভাব্য প্রতিকার",
+    "diagnosticsTestsTitle": "প্রস্তাবিত ডায়াগনস্টিক পরীক্ষা",
+    "bookAppointmentButton": "অ্যাপয়েন্টমেন্ট বুক করুন",
+    "bookAppointmentAlert": "অ্যাপয়েন্টমেন্ট বুকিং কার্যকারিতা এখানে প্রয়োগ করা হবে।",
+    "defaultSummary": "কোনো সারাংশ প্রদান করা হয়নি।",
+    "defaultPatientName": "রোগী",
+    "forPatient": "এর জন্য: {{name}}"
+  },
+  "loginPage": {
+    "title": "লগইন",
+    "subtitle": "আপনার অ্যাকাউন্টে প্রবেশ করুন",
+    "usernameLabel": "ব্যবহারকারীর নাম",
+    "usernamePlaceholder": "আপনার ব্যবহারকারীর নাম লিখুন",
+    "passwordLabel": "পাসওয়ার্ড",
+    "passwordPlaceholder": "আপনার পাসওয়ার্ড লিখুন",
+    "loginButton": "লগইন",
+    "invalidCredentials": "অবৈধ প্রমাণপত্র। অনুগ্রহ করে আবার চেষ্টা করুন।",
+    "loginSuccess": "সফলভাবে লগইন হয়েছে!",
+    "testCredentials": "পরীক্ষার প্রমাণপত্র: patient/password123"
   }
 }

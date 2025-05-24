@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from 'react-i18next';
-import { Globe, ChevronDown, Stethoscope } from 'lucide-react';
+import { Globe, ChevronDown, Stethoscope, LogIn } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -46,7 +46,14 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-xl sm:text-2xl font-bold">{t('header.title')}</Link>
         <nav className="flex items-center space-x-2 sm:space-x-4">
-          <Link 
+          <Link
+            to="/login"
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-3 sm:px-4 rounded inline-flex items-center text-sm sm:text-base"
+          >
+            <LogIn className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+            {t('header.login', 'Login')}
+          </Link>
+          <Link
             to="/chatbot"
             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-3 sm:px-4 rounded inline-flex items-center text-sm sm:text-base"
           >

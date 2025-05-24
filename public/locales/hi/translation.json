@@ -67,6 +67,27 @@
     "newTitle": "आप हाल ही में कैसा महसूस कर रहे हैं?",
     "activate_voice_input": "वॉइस इनपुट सक्रिय करें",
     "deactivate_voice_input": "वॉइस इनपुट निष्क्रिय करें",
-    "voice_input_active_placeholder": "वॉइस इनपुट सक्रिय है। कुछ कहो..."
+    "voice_input_active_placeholder": "वॉइस इनपुट सक्रिय है। कुछ कहो...",
+    "login": "लॉगिन",
+    "received_data_summary": "मैंने जानकारी को प्रसंस्कृत किया है। क्या कुछ और है जिसमें मैं आपकी मदद कर सकता हूं?",
+    "received_data_summary_v2": "ठीक है, मैंने नोट किया है कि आपने '{{symptom}}' का उल्लेख किया है। क्या आप मुझे इसके बारे में और बता सकते हैं?",
+    "default_reply": "क्षमा करें, मुझे एक ऐसा उत्तर मिला जिसे मैं समझ नहीं सका।"
+  },
+  "loginPage": {
+    "invalidCredentials": "अमान्य प्रमाण-पत्र। कृपया पुनः प्रयास करें।"
+  },
+  "summaryPage": {
+    "title": "परामर्श सारांश",
+    "noDataTitle": "कोई सारांश डेटा उपलब्ध नहीं",
+    "noDataText": "ऐसा लगता है कि आपके सारांश को पुनः प्राप्त करने में कोई समस्या थी। कृपया पुनः प्रयास करें या सहायता से संपर्क करें।",
+    "goHomeButton": "होम पर जाएं",
+    "summaryReportTitle": "सारांश रिपोर्ट",
+    "possibleRemediesTitle": "संभावित उपचार",
+    "diagnosticsTestsTitle": "सुझाए गए निदान परीक्षण",
+    "bookAppointmentButton": "अपॉइंटमेंट बुक करें",
+    "bookAppointmentAlert": "अपॉइंटमेंट बुकिंग कार्यक्षमता यहां लागू की जाएगी।",
+    "defaultSummary": "कोई सारांश प्रदान नहीं किया गया।",
+    "defaultPatientName": "रोगी",
+    "forPatient": "के लिए: {{name}}"
   }
 }
