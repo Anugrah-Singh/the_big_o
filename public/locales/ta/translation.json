@@ -95,7 +95,9 @@
     "noUpcomingAppointments": "வரவிருக்கும் சந்திப்புகள் இல்லை.",
     "heroAlt": "மருத்துவர் நோயாளியை கவனிக்கிறார்",
     "ui": {
-      "welcomeMessage": "வருக, {{name}}!"
+      "welcomeMessage": "வருக, {{name}}!",
+      "multilingualVoiceAssistantButton": "பன்மொழி குரல் உதவியாளர்",
+      "symptomCheckerButton": "அறிகுறி சரிபார்ப்பு"
     }
   },
   "speech": {

@@ -93,7 +93,9 @@
       "healthSummary": "स्वास्थ्य सारांश",
       "vitals": "महत्वपूर्ण संकेत",
       "recentActivity": "हाल की गतिविधि"
-    }
+    },
+    "multilingualVoiceAssistantButton": "बहुभाषी वॉयस असिस्टेंट",
+    "symptomCheckerButton": "लक्षण परीक्षक"
   },
   "speech": {
     "mic_not_supported": "आपका ब्राउज़र ऑडियो रिकॉर्डिंग का समर्थन नहीं करता है।",
