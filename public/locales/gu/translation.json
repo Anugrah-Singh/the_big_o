@@ -97,7 +97,9 @@
     "heroAlt": "ડૉક્ટર દર્દીની સારવાર કરી રહ્યા છે",
     "ui": {
       "welcomeMessage": "આવો, {{name}}!"
-    }
+    },
+    "multilingualVoiceAssistantButton": "બહુભાષી વૉઇસ સહાયક",
+    "symptomCheckerButton": "લક્ષણ તપાસનાર"
   },
   "speech": {
     "mic_not_supported": "તમારું બ્રાઉઝર ઑડિઓ રેકોર્ડિંગને સમર્થન આપતું નથી.",

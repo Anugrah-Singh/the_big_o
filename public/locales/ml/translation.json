@@ -97,7 +97,9 @@
     "heroAlt": "ഡോക്ടർ രോഗിയെ പരിചരിക്കുന്നു",
     "ui": {
       "welcomeMessage": "സ്വാഗതം, {{name}}!"
-    }
+    },
+    "multilingualVoiceAssistantButton": "ബഹുഭാഷാ വോയ്‌സ് അസിസ്റ്റന്റ്",
+    "symptomCheckerButton": "ലക്ഷണ പരിശോധകൻ"
   },
   "speech": {
     "mic_not_supported": "നിങ്ങളുടെ ബ്രൗസർ ഓഡിയോ റെക്കോർഡിംഗിനെ പിന്തുണയ്ക്കുന്നില്ല.",

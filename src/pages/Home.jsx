@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext'; // Import useAuth
-import { UserCircle, CalendarDays, Phone, Mail, MapPin } from 'lucide-react'; // Import icons
+import { UserCircle, CalendarDays, Phone, Mail, MapPin, Stethoscope, MessageSquare } from 'lucide-react'; // Import icons, added Stethoscope and MessageSquare
+import { Link } from 'react-router-dom'; // Import Link
 
 const Home = () => {
   const { t } = useTranslation();
@@ -47,6 +48,25 @@ const Home = () => {
           <p className="text-lg text-gray-600">
             {t('homePage.healthOverview', "Here's an overview of your health information.")}
           </p>
+          {/* Buttons Container */}
+          <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
+            <Link
+              to="/chatbot"
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-blue-500/30 inline-flex items-center text-base transition-all duration-300 transform hover:scale-105 w-full sm:w-auto justify-center"
+            >
+              <Stethoscope className="mr-2 h-5 w-5" />
+              {t('homePage.symptomCheckerButton', 'Symptom Checker')}
+            </Link>
+            {/* <a
+              href="http://127.0.0.1:7860"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-cyan-500/30 inline-flex items-center text-base transition-all duration-300 transform hover:scale-105 w-full sm:w-auto justify-center"
+            >
+              <MessageSquare className="mr-2 h-5 w-5" />
+              {t('homePage.multilingualVoiceAssistantButton', 'Multilingual Voice Assistant')}
+            </a> */}
+          </div>
         </div>
 
         {/* Patient Information Grid */}
