@@ -95,9 +95,7 @@
     "noUpcomingAppointments": "कोणत्याही आगामी भेटी नाहीत.",
     "heroAlt": "डॉक्टर रुग्णाची काळजी घेत आहेत",
     "ui": {
-      "welcomeMessage": "स्वागत आहे, {{name}}!",
-      "multilingualVoiceAssistantButton": "बहुभाषिक व्हॉइस असिस्टंट",
-      "symptomCheckerButton": "लक्षण तपासणारा"
+      "welcomeMessage": "स्वागत आहे, {{name}}!"
     }
   },
   "speech": {

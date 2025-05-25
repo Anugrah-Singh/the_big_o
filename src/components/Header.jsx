@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from 'react-i18next';
-import { Globe, ChevronDown, LogIn, LogOut, User, Heart } from 'lucide-react';
+import { Globe, ChevronDown, Stethoscope, LogIn, LogOut, User, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -70,6 +70,16 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="flex items-center space-x-2 sm:space-x-4">
+            {/* Symptom Checker Button */}
+            <Link
+              to="/chatbot"
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-2.5 px-4 sm:px-5 rounded-xl shadow-lg hover:shadow-blue-500/25 inline-flex items-center text-sm sm:text-base transition-all duration-300 transform hover:scale-105"
+            >
+              <Stethoscope className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="hidden sm:inline">{t('header.symptomChecker', 'Symptom Checker')}</span>
+              <span className="sm:hidden">{t('header.check', 'Check')}</span>
+            </Link>
+
             {/* User Authentication */}
             {isAuthenticated ? (
               <div className="relative" ref={userDropdownRef}>

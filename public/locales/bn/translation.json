@@ -96,9 +96,7 @@
     "heroAlt": "একজন ডাক্তার একজন রোগীর পরিচর্যা করছেন",
     "healthOverview": "আপনার স্বাস্থ্যের তথ্যের একটি সংক্ষিপ্ত বিবরণ এখানে।",
     "ui": {
-      "welcomeMessage": "স্বাগতম, {{name}}!",
-      "multilingualVoiceAssistantButton": "বহুভাষিক ভয়েস সহকারী",
-      "symptomCheckerButton": "লক্ষণ পরীক্ষক"
+      "welcomeMessage": "স্বাগতম, {{name}}!"
     }
   },
   "speech": {

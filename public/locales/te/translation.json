@@ -106,9 +106,7 @@
       "specialtyGeneralCheckup": "సాధారణ తనిఖీ",
       "doctorSarahJones": "డా. సారా జోన్స్",
       "specialtyDermatology": "డెర్మటాలజీ"
-    },
-    "multilingualVoiceAssistantButton": "బహుభాషా వాయిస్ అసిస్టెంట్",
-    "symptomCheckerButton": "లక్షణాల తనిఖీ"
+    }
   },
   "speech": {
     "mic_not_supported": "మీ బ్రౌజర్ ఆడియో రికార్డింగ్‌కు మద్దతు ఇవ్వదు.",

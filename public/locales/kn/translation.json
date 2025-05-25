@@ -96,9 +96,7 @@
     "heroAlt": "ವೈದ್ಯರು ರೋಗಿಯನ್ನು ನೋಡಿಕೊಳ್ಳುತ್ತಿದ್ದಾರೆ",
     "ui": {
       "welcomeMessage": "ಸ್ವಾಗತ, {{name}}!"
-    },
-    "multilingualVoiceAssistantButton": "ಬಹುಭಾಷಾ ಧ್ವನಿ ಸಹಾಯಕ",
-    "symptomCheckerButton": "ರೋಗಲಕ್ಷಣ ಪರೀಕ್ಷಕ"
+    }
   },
   "speech": {
     "mic_not_supported": "ನಿಮ್ಮ ಬ್ರೌಸರ್ ಆಡಿಯೊ ರೆಕಾರ್ಡಿಂಗ್ ಅನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.",
