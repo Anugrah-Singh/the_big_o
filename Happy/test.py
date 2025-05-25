@@ -5,21 +5,12 @@ import requests
 dwani.api_key = 'abhishekr.23.becs@acharya.ac.in_dwani_krishnadevaraya'
 dwani.api_base = 'https://dwani-dwani-api.hf.space'
 
-
-def run_chat():
+def run_asr():
     try:
-        resp = dwani.Chat.create(prompt="Hello!", src_lang="english", tgt_lang="kannada")
-        print("Chat Response:", resp)
+        result = dwani.ASR.transcribe(file_path="kannada_sample.wav", language="kannada")
+        print("ASR Response:", result)
     except Exception as e:
-        print(f"Error in Chat module: {e}")
+        print(f"Error in ASR module: {e}")
 
-def make_post_request():
-    url = "https://sanky02.app.n8n.cloud/webhook-test/14530249-7a62-4625-926e-8961d6884924"
-    data = {"message": "Hello from Python!"}
-    try:
-        response = requests.post(url, json=data)
-        print("POST Response:", response.text)
-    except Exception as e:
-        print(f"Error in POST request: {e}")
-
-make_post_request()
+print("Running ASR...")
+run_asr()

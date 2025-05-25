@@ -6,6 +6,10 @@ import logging
 from flask_cors import CORS
 import google.generativeai as genai
 import os
+import requests # Added import
+import tempfile
+from werkzeug.utils import secure_filename
+from flask import send_file
 
 
 # Set up logging
@@ -38,7 +42,9 @@ else:
 
 template = {
   "name": "string",
-  "age": "number",
+  "age": "string",
+  "blood_group": "string",
+  "dob": "string",
   "symptoms": [
     {
       "symptom": "string",
@@ -112,6 +118,7 @@ Instructions:
 6. If the patient is unsure about a field or doesn't provide information, mark as 'N/A' or 'unknown'
 7. Use medical knowledge to categorize symptoms appropriately
 8. Consider the conversation flow - don't lose previously provided information
+
 
 Return ONLY the updated template as valid JSON, no additional text or explanations:
 """
@@ -217,9 +224,10 @@ Instructions:
 4. Else (template is incomplete and more questions can be asked):
    Respond with: {{"complete": false, "question": "Ask ONE specific, helpful, and empathetic question about the most important missing information. Ensure this question has not been effectively answered before by reviewing the conversation history."}}
 5. Do not ask too many questions. If the previous question was about symptoms, consider asking about medical history next, or vice versa, if appropriate and information is missing.
+6. Don't ever ask for personal information like phone number, email, address etc
 
 Important fields to prioritize (if not yet filled and questions remaining < {max_questions}):
-- Patient name and basic info (age)
+- Patient name and (age), blood group, date of birth
 - Primary symptom with clear description
 - Symptom onset, duration, and severity
 - Relevant medical history (conditions, allergies)
@@ -329,9 +337,90 @@ def translate_text_to_language(text, target_language):
         logger.warning("Translation failed, returning original text")
         return True, text
 
+# --- Final Summary Template ---
+final_summary_template_structure = {
+    "patient_name": "Full name of the patient",
+    "date_of_birth": "Date of birth in YYYY-MM-DD format",
+    "gender": "Patient's gender (Male, Female, Other)",
+    "blood_group": "Blood type of the patient",
+    "contact_info": "Relevant contact details if required",
+    "summary": "Brief conclusion about the patient's current health status, treatment progress, and doctor's recommendations",
+    "detailed_history": {}, # Placeholder for more detailed structured data if extracted
+    "medical_history": {}, # Placeholder
+    "medical_condition": {}, # Placeholder
+    "current_medication": {}, # Placeholder
+    "test_results": {}, # Placeholder
+    "lifestyle_risk_factors": {} # Placeholder
+}
+
+class FinalSummaryLLM:
+    """LLM instance for generating a final patient summary using Google Gemini."""
+    def __init__(self):
+        if not GEMINI_API_KEY:
+            logger.error("GEMINI_API_KEY not found. Final summary generation will not work.")
+            self.model = None
+        else:
+            self.model = genai.GenerativeModel('gemini-1.5-flash') # Or your preferred Gemini model
+
+    def generate_summary(self, conversation_history, summary_structure):
+        if not self.model:
+            logger.error("Gemini model not initialized for FinalSummaryLLM. Please set GEMINI_API_KEY.")
+            return False, {"error": "Model not initialized"}
+
+        try:
+            # Format conversation history for the prompt
+            formatted_history = "\\n".join([
+                f"{msg['type'].replace('_', ' ').capitalize()}: {msg['content']}"
+                for msg in conversation_history
+            ])
+
+            prompt = f"""
+You are a medical scribe AI. Based on the entire following conversation history, your task is to meticulously fill out the provided JSON template with all relevant patient information.
+Be comprehensive and accurate. If specific details for a field are not explicitly mentioned in the conversation, use "Not specified" or leave the corresponding structured field (like medical_history) as an empty object.
+
+Conversation History:
+{formatted_history}
+
+JSON Template to fill:
+{json.dumps(summary_structure, indent=2)}
+
+Instructions:
+1.  Carefully read the entire conversation history.
+2.  Extract all pertinent information for each field in the JSON template.
+3.  For "summary", provide a concise paragraph summarizing the patient's situation, key symptoms, and any mentioned next steps or advice.
+4.  For structured fields like "detailed_history", "medical_history", etc., populate them based on information gathered. If these were part of the earlier data collection template, try to map them. If not, extract relevant details from the conversation.
+5.  Ensure the output is ONLY the filled JSON object, with no additional text, explanations, or markdown.
+
+Return ONLY the updated JSON summary:
+"""
+            response = self.model.generate_content(prompt)
+            
+            response_text = response.text if hasattr(response, 'text') else str(response)
+            
+            json_start = response_text.find('{')
+            json_end = response_text.rfind('}') + 1
+            
+            if json_start != -1 and json_end != 0:
+                json_str = response_text[json_start:json_end]
+                generated_summary = json.loads(json_str)
+                logger.info("Final summary generated successfully using Gemini.")
+                return True, generated_summary
+            else:
+                logger.error("No valid JSON found in Gemini response for final summary.")
+                logger.error(f"Gemini response: {response_text}")
+                return False, {"error": "No valid JSON in response"}
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse Gemini response for final summary as JSON: {e}")
+            logger.error(f"Gemini response: {response_text}")
+            return False, {"error": f"JSON parsing error: {e}"}
+        except Exception as e:
+            logger.error(f"Final summary generation failed with Gemini: {e}", exc_info=True)
+            return False, {"error": f"API call failed: {e}"}
+
 # Initialize LLM instances
 template_updater = TemplateUpdaterLLM()
 completeness_checker = CompletenessCheckerLLM()
+final_summary_generator = FinalSummaryLLM() # Add this line
 
 @app.route('/health', methods=['GET'])
 def health_check():
@@ -357,6 +446,7 @@ def chat_endpoint():
         current_template = data.get('template')
         user_answer = data.get('answer')
         conversation_history = data.get('conversation_history', [])
+        print(data.get('language'))
         target_language = data.get('language', 'english')  # Get target language, default to English
         MAX_QUESTIONS_ALLOWED = 10 # Define your limit
 
@@ -452,7 +542,7 @@ def chat_endpoint():
             if response_data['complete']:
                 completion_message = completeness_result.get(
                     'message',
-                    'Thank you! Your medical information has been collected successfully.'
+                    'Thank you! Your information has been collected successfully. A healthcare professional will review your case.'
                 )
                 
                 # Translate completion message if needed
@@ -507,10 +597,60 @@ def chat_endpoint():
                     logger.info(f"Next question: {next_question}")
 
         response_data['conversation_history'] = updated_conversation_history
-        return jsonify(response_data)
+
+        # --- Generate Final Summary if complete ---
+        if response_data.get('complete'):
+            logger.info("Step 3: Generating final summary...")
+            summary_success, generated_summary = final_summary_generator.generate_summary(
+                updated_conversation_history, # Use the most up-to-date history
+                final_summary_template_structure # Pass the base structure
+            )
+            if summary_success:
+                response_data['final_summary'] = generated_summary
+                logger.info("Final summary generated.")
+
+                # --- Save the generated summary to the database ---
+                try:
+                    # Assuming your Flask app is running on localhost:5000 or the relevant port
+                    # and the /save_detailed_report endpoint is part of the same app.
+                    # We need to construct the full URL.
+                    # If running locally and this is the same app, you might need to adjust
+                    # if the server is not on default http://127.0.0.1:5000/
+                    # For now, let's assume it's a relative path accessible during the request context
+                    # However, for robustness, an absolute URL is better if this were a separate service.
+                    # Since it's the same app, we can call the function directly or use test_client,
+                    # but a request is more illustrative of a microservice architecture
+
+                    # Get base URL for the current request
+                    base_url = 'http://192.168.28.205:2000'
+
+                    save_report_url = f"{base_url}/save_detailed_report"
+                    
+                    logger.info(f"Attempting to save report to: {save_report_url}")
+                    save_response = requests.post(save_report_url, json=generated_summary)
+                    
+                    if save_response.status_code == 200 or save_response.status_code == 201:
+                        logger.info(f"Successfully saved detailed report. Response: {save_response.json()}")
+                    else:
+                        logger.error(f"Failed to save detailed report. Status: {save_response.status_code}, Response: {save_response.text}")
+                        # Optionally, you could add this error to the main response if critical
+                        # response_data['save_report_error'] = f"Failed to save report: {save_response.status_code}"
+                except requests.exceptions.RequestException as req_err:
+                    logger.error(f"Error making request to save_detailed_report: {req_err}")
+                    # response_data['save_report_error'] = f"Error saving report: {req_err}"
+                except Exception as e_save:
+                    logger.error(f"An unexpected error occurred while trying to save the detailed report: {e_save}", exc_info=True)
+                    # response_data['save_report_error'] = f"Unexpected error saving report: {e_save}"
+                # --- End of save block ---
+            else:
+                logger.error("Failed to generate final summary.")
+                # Optionally, reflect this failure in the response
+                # response_data['final_summary_error'] = "Failed to generate final summary"
+        
+        return jsonify(response_data), 200
 
     except Exception as e:
-        logger.error(f"Unexpected chat error: {e}", exc_info=True) # exc_info=True for traceback
+        logger.error(f"Chat endpoint error: {e}", exc_info=True) # Log full traceback
         return jsonify({
             'success': False,
             'error': f'Unexpected server error: {str(e)}'
@@ -570,6 +710,316 @@ def not_found(e):
         'success': False,
         'error': 'Endpoint not found. Available endpoints: /health (GET), /chat (POST), /start (GET)'
     }), 404
+
+@app.route('/save_detailed_report', methods=['POST'])
+def save_detailed_report():
+    """
+    Endpoint to save detailed report of a patient.
+    Accepts JSON data in the request body.
+    """
+    try:
+        report_data = request.get_json()
+        if not report_data:
+            return jsonify({"success": False, "error": "No data provided"}), 400
+
+        # Here you would typically save the report_data to your database
+        # For example, using SQLAlchemy, a direct DB connection, or another service call.
+        # This is a placeholder for your actual database saving logic.
+        logger.info(f"Received report data to save: {json.dumps(report_data, indent=2)}")
+        
+        # --- Placeholder for DB saving logic ---
+        # Example:
+        # db_session.add(PatientReport(**report_data))
+        # db_session.commit()
+        # For now, we'll just log it and return success.
+        # --- End Placeholder ---
+
+        return jsonify({"success": True, "message": "Report saved successfully."}), 201 # 201 Created is often used for successful POSTs
+    except Exception as e:
+        logger.error(f"Error in save_detailed_report: {e}", exc_info=True)
+        return jsonify({"success": False, "error": f"Server error: {e}"}), 500
+
+@app.route('/vass', methods=['POST'])
+def vass_chat():
+    try:
+        logger.info("=== VASS CHAT REQUEST RECEIVED ===")
+        
+        if 'file' not in request.files:
+            return jsonify({"success": False, "error": "No audio file part"}), 400
+        
+        file = request.files['file']
+        language = request.form.get('language', 'english') # Default to English if not provided
+
+        if file.filename == '':
+            return jsonify({"success": False, "error": "No selected file"}), 400
+
+        if not language:
+            return jsonify({"success": False, "error": "Language parameter is required"}), 400
+
+        filename = secure_filename(file.filename)
+        temp_dir = tempfile.mkdtemp()
+        temp_audio_path = os.path.join(temp_dir, filename)
+        file.save(temp_audio_path)
+        
+        logger.info(f"Audio file saved to {temp_audio_path}")
+        logger.info(f"Target language: {language}")
+
+        # 1. Transcribe audio to text
+        try:
+            # Ensure Dwani API base is set
+            if hasattr(dwani, 'ASR') and dwani.ASR is not None: # Changed from Audio to ASR
+                dwani.ASR.api_base = DWANI_API_BASE # Set API base for ASR module
+            
+            transcription_result = dwani.ASR.transcribe( # Changed from dwani.Audio.run_transcribe
+                file_path=temp_audio_path,
+                language=language.lower() 
+            )
+            
+            if isinstance(transcription_result, dict):
+                user_text = transcription_result.get('text')
+            elif isinstance(transcription_result, str): # Assuming direct text string if not dict
+                user_text = transcription_result
+            else: # Fallback if unexpected format
+                user_text = str(transcription_result)
+
+
+            if not user_text or not user_text.strip():
+                logger.error(f"Transcription failed or returned empty text. Result: {transcription_result}")
+                return jsonify({"success": False, "error": "Failed to transcribe audio or transcription was empty."}), 500
+            logger.info(f"Transcription successful: {user_text}")
+        except Exception as e_transcribe:
+            logger.error(f"Error during audio transcription: {e_transcribe}", exc_info=True)
+            return jsonify({"success": False, "error": f"Transcription error: {e_transcribe}"}), 500
+        finally:
+            # Clean up the temporary file
+            if os.path.exists(temp_audio_path):
+                os.remove(temp_audio_path)
+            if os.path.exists(temp_dir):
+                os.rmdir(temp_dir)
+
+        # 2. Process text through chat logic (adapted from chat_endpoint)
+        # We need to manage template and conversation_history.
+        # For a VASS interaction, we might need to decide how state is passed.
+        # For simplicity, let's assume each /vass call can be somewhat independent or
+        # the client sends the necessary state (template, history).
+        # Here, we'll assume a new/default template for each audio interaction for now.
+        # A more robust solution would involve session management or client-side state.
+
+        current_template_json = request.form.get('template')
+        conversation_history_json = request.form.get('conversation_history', '[]')
+
+        try:
+            current_template = json.loads(current_template_json) if current_template_json else copy.deepcopy(template)
+            conversation_history = json.loads(conversation_history_json)
+        except json.JSONDecodeError:
+            logger.warning("Invalid JSON for template or conversation_history, using defaults.")
+            current_template = copy.deepcopy(template)
+            conversation_history = []
+        
+        MAX_QUESTIONS_ALLOWED = 15 # As defined in chat_endpoint
+
+        # Add transcribed user text to history
+        if not conversation_history or conversation_history[-1].get('content') != user_text.strip() or conversation_history[-1].get('type') != 'user_answer':
+            conversation_history.append({
+                'type': 'user_answer',
+                'content': user_text.strip(),
+                'timestamp': None 
+            })
+
+        logger.info("Step 1 (VASS): Updating template with transcribed text...")
+        update_success, updated_template = template_updater.update_template(
+            current_template, user_text.strip(), conversation_history
+        )
+
+        if not update_success:
+            # If template update fails, we might not have a specific text response.
+            # Consider a generic audio error message.
+            error_message_text = "I'm sorry, I encountered an issue processing your information."
+            # Fallthrough to generate audio for this error message.
+        else:
+            logger.info("Template updated successfully (VASS)")
+
+        num_system_questions = sum(1 for msg in conversation_history if msg['type'] == 'system_question')
+        
+        response_text_to_speak = None
+        is_complete = False
+        updated_conversation_history = conversation_history.copy()
+
+        if num_system_questions >= MAX_QUESTIONS_ALLOWED and update_success:
+            logger.info(f"Max questions reached in VASS. Forcing completion.")
+            response_text_to_speak = "Thank you! Your information has been collected successfully as we've reached our question limit."
+            is_complete = True
+            updated_conversation_history.append({
+                'type': 'system_message',
+                'content': response_text_to_speak, # Original English for history
+                'timestamp': None
+            })
+        elif not update_success:
+             response_text_to_speak = "I'm sorry, I had trouble understanding that. Could you please try again?"
+             # No change to completeness or history for this specific error path yet
+        else:
+            logger.info("Step 2 (VASS): Checking template completeness...")
+            check_success, completeness_result = completeness_checker.check_completeness(
+                updated_template,
+                updated_conversation_history,
+                questions_asked_count=num_system_questions,
+                max_questions=MAX_QUESTIONS_ALLOWED
+            )
+
+            if not check_success:
+                response_text_to_speak = "I'm having a little trouble processing that. Let's try again."
+                # No change to completeness or history for this specific error path yet
+            else:
+                is_complete = completeness_result.get('complete', False)
+                if is_complete:
+                    response_text_to_speak = completeness_result.get(
+                        'message',
+                        'Thank you! Your information has been collected successfully.'
+                    )
+                    updated_conversation_history.append({
+                        'type': 'system_message',
+                        'content': response_text_to_speak, # Original English for history
+                        'timestamp': None
+                    })
+                else:
+                    # Check for LLM wanting to ask a question that would exceed limit
+                    if num_system_questions + 1 > MAX_QUESTIONS_ALLOWED and completeness_result.get('question'):
+                        logger.info(f"LLM wanted to ask another question, but it would exceed max questions (VASS). Forcing completion.")
+                        response_text_to_speak = "Thank you! We've gathered sufficient information for now."
+                        is_complete = True
+                        updated_conversation_history.append({
+                            'type': 'system_message',
+                            'content': response_text_to_speak, # Original English for history
+                            'timestamp': None
+                        })
+                    else:
+                        response_text_to_speak = completeness_result.get(
+                            'question',
+                            'Could you provide more details?'
+                        )
+                        updated_conversation_history.append({
+                            'type': 'system_question',
+                            'content': response_text_to_speak, # Original English for history
+                            'timestamp': None
+                        })
+        
+        final_summary_json = None
+        if is_complete and update_success and check_success: # Only generate summary if prior steps were okay
+            logger.info("Step 3 (VASS): Generating final summary...")
+            summary_success, generated_summary = final_summary_generator.generate_summary(
+                updated_conversation_history, 
+                final_summary_template_structure
+            )
+            if summary_success:
+                final_summary_json = json.dumps(generated_summary) # For potential inclusion in response
+                logger.info("Final summary generated (VASS).")
+                # Saving logic could be added here if needed, similar to chat_endpoint
+            else:
+                logger.error("Failed to generate final summary (VASS).")
+
+
+        # 3. Convert response text to speech
+        if not response_text_to_speak: # Fallback if no text was set
+            response_text_to_speak = "I'm sorry, an unexpected error occurred."
+
+        # Translate the response_text_to_speak to the target language *before* TTS
+        # The TTS engine itself might handle language, but our text should be in the target lang.
+        # However, the dwani.Audio.speech takes 'language' as a param, implying it handles translation or expects input in that lang.
+        # Let's assume dwani.Audio.speech expects the *input text* to be in the target language if language param is also target.
+        # Or, it expects English input and *it* translates then synthesizes.
+        # The example `dwani.Audio.speech(input="ಕರ್ನಾಟಕ ದ ರಾಜಧಾನಿ ಯಾವುದು", response_format="mp3")` suggests input is already in target lang.
+        # So, we should translate our `response_text_to_speak` first.
+
+        translation_for_tts_success, text_for_tts = translate_text_to_language(response_text_to_speak, language)
+        if not translation_for_tts_success:
+            logger.warning(f"Failed to translate response text for TTS, using original: {response_text_to_speak}")
+            # Use original English text if translation fails, and hope TTS can handle it or defaults.
+            # Or, set language for TTS to 'english' in this case. For now, proceed with original text.
+            text_for_tts = response_text_to_speak # Fallback to original text
+
+        logger.info(f"Text for TTS (after attempting translation to {language}): {text_for_tts}")
+
+        temp_response_audio_dir = tempfile.mkdtemp()
+        # It's good practice to use a unique name for the output file too.
+        temp_response_audio_filename = f"response_{secure_filename(language)}.mp3"
+        temp_response_audio_path = os.path.join(temp_response_audio_dir, temp_response_audio_filename)
+
+        try:
+            if hasattr(dwani, 'Audio') and dwani.Audio is not None:
+                dwani.Audio.api_base = DWANI_API_BASE # Ensure API base
+            
+            # The example `dwani.Audio.speech(input="ಕರ್ನಾಟಕ ದ ರಾಜಧಾನಿ ಯಾವುದು", response_format="mp3")`
+            # does not specify a language parameter. If the `input` is already in the target language,
+            # the `language` parameter to `speech` might be for voice selection or internal routing.
+            # Let's assume the `input` text should be in the target language.
+            speech_response_content = dwani.Audio.speech(
+                input=text_for_tts, # Text already translated to target language
+                response_format="mp3" # Assuming mp3 is desired
+                # language=language.lower() # If the speech API needs a language hint for voice/accent
+            )
+            
+            with open(temp_response_audio_path, "wb") as f:
+                f.write(speech_response_content)
+            logger.info(f"Response audio saved to {temp_response_audio_path}")
+
+            # Prepare metadata to send along with the audio
+            response_metadata = {
+                "success": True,
+                "text_spoken": text_for_tts, # The actual text that was converted to speech
+                "original_response_text": response_text_to_speak, # The English version before TTS translation
+                "language": language,
+                "conversation_history": updated_conversation_history,
+                "updated_template": updated_template if update_success else current_template,
+                "complete": is_complete
+            }
+            if final_summary_json:
+                response_metadata["final_summary"] = json.loads(final_summary_json)
+
+
+            # Use a custom header to send JSON metadata, as send_file is for the file itself.
+            # One way is to use a multipart response, but that's more complex.
+            # A simpler way for now: send metadata in headers, or make client do a second request for state.
+            # For now, let's just send the audio. The client would need to manage state.
+            # A better approach might be to return JSON with a link to the audio or base64 encoded audio.
+            # Given the prompt implies returning the audio file directly:
+            
+            # It's tricky to send both a file and rich JSON data in a single standard HTTP response
+            # without using multipart/form-data, which is usually for uploads, not responses.
+            # A common pattern is to return JSON that *includes* the audio, perhaps base64 encoded,
+            # or provides a URL to fetch the audio.
+            # If we must return the file directly via send_file, metadata is limited.
+
+            # Let's try to send the metadata as a JSON string in a custom header.
+            # Client would need to parse this header.
+            resp = send_file(temp_response_audio_path, as_attachment=True, download_name=f"response_{language}.mp3", mimetype="audio/mpeg")
+            resp.headers["X-Chat-Metadata"] = json.dumps(response_metadata)
+            
+            return resp
+
+        except Exception as e_speech:
+            logger.error(f"Error during text-to-speech: {e_speech}", exc_info=True)
+            # Fallback: return a JSON error if TTS fails
+            return jsonify({"success": False, "error": f"Speech synthesis error: {e_speech}", "text_that_failed_tts": text_for_tts}), 500
+        finally:
+            # Clean up temporary response audio file and directory
+            if os.path.exists(temp_response_audio_path):
+                os.remove(temp_response_audio_path)
+            if os.path.exists(temp_response_audio_dir):
+                os.rmdir(temp_response_audio_dir)
+
+    except Exception as e:
+        logger.error(f"VASS chat endpoint error: {e}", exc_info=True)
+        # Ensure any created temp dirs are cleaned up if an early exception occurs
+        if 'temp_dir' in locals() and os.path.exists(temp_dir):
+            if 'temp_audio_path' in locals() and os.path.exists(temp_audio_path):
+                os.remove(temp_audio_path)
+            os.rmdir(temp_dir)
+        if 'temp_response_audio_dir' in locals() and os.path.exists(temp_response_audio_dir):
+            if 'temp_response_audio_path' in locals() and os.path.exists(temp_response_audio_path):
+                os.remove(temp_response_audio_path)
+            os.rmdir(temp_response_audio_dir)
+            
+        return jsonify({'success': False, 'error': f'Unexpected server error in VASS: {str(e)}'}), 500
 
 if __name__ == '__main__':
     logger.info("Starting Medical Chatbot Server...")

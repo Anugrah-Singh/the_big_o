@@ -24,16 +24,19 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
+
+
 # --- Dwani API Configuration ---
-DWANI_API_KEY = 'abhishekr.23.becs@acharya.ac.in_dwani_krishnadevaraya'
+DWANI_API_KEY = 'abhishekr.23.becs@acharya.ac.in_dwani_krishnadevaraya'  # Updated API Key
 DWANI_API_BASE = 'https://dwani-dwani-api.hf.space'
 
 # Configure Dwani API
-# dwani.api_key = DWANI_API_KEY # No longer using dwani for this endpoint
-# dwani.api_base = DWANI_API_BASE # No longer using dwani for this endpoint
+dwani.api_key = DWANI_API_KEY # Uncommented and ensuring API key is set
+dwani.api_base = DWANI_API_BASE # Ensuring API base is set for the main module as well
 
 # Set API base for ASR module
 if hasattr(dwani, 'ASR') and dwani.ASR is not None:
+    dwani.ASR.api_key = DWANI_API_KEY # Ensure API key is set for ASR module
     dwani.ASR.api_base = DWANI_API_BASE
     logger.info(f"Configured Dwani ASR with API base: {DWANI_API_BASE}")
 
@@ -141,7 +144,8 @@ def dwani_transcribe(file_path, language='kannada'):
             logger.error("File does not exist!")
             return False, "Audio file not found"
         
-        # Force API base configuration before call
+        # Force API base and key configuration before call
+        dwani.api_key = DWANI_API_KEY # Ensure API key is set before call
         dwani.ASR.api_base = DWANI_API_BASE
         
         # Call Dwani ASR API
@@ -1168,4 +1172,4 @@ if __name__ == '__main__':
     logger.info(f"Dwani API Base URL: {DWANI_API_BASE}")
     
     # Start Flask app
-    app.run(host='0.0.0.0', port=5050, debug=True)
+    app.run(host='0.0.0.0', port=9000, debug=True)
