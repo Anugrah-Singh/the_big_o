@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'; // Removed AuthProvider
 // Removed AuthProvider import
-import Header from "./components/Header";
+import Header from "./components/Header"; // Comment out or remove this line
 import Home from "./pages/Home";
 import SpeechTestPage from "./pages/SpeechTestPage";
 import ChatBot from './components/ChatBot'; // Import ChatBot
@@ -13,7 +13,7 @@ function App() {
   return (
     // <AuthProvider>  Removed AuthProvider wrapper
     <>
-        <Header />
+        <Header /> {/* Comment out or remove this line */}
         <div className="pt-16 sm:pt-20"> {/* Add padding to prevent content from being hidden behind fixed header */}
           <Routes>
             <Route path="/launch" element={<LaunchPage />} />

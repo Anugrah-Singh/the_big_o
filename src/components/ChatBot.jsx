@@ -91,13 +91,29 @@ const ChatBot = () => {
       }
 
       const currentLanguageCode = i18n.language;
-      const currentLanguageFullName = t(`languages.${currentLanguageCode}`);
+      // const currentLanguageFullName = t(`languages.${currentLanguageCode}`); // This line is replaced
+
+      // Map language codes to their English names for the backend
+      const languageMap = {
+        'en': 'english',
+        'hi': 'hindi',
+        'bn': 'bengali',
+        'gu': 'gujarati',
+        'kn': 'kannada',
+        'ml': 'malayalam',
+        'mr': 'marathi',
+        'ta': 'tamil',
+        'te': 'telugu'
+      };
+      // Use the language code (e.g., 'hi') to get the English name (e.g., 'hindi')
+      // Fallback to the code itself if it's not in the map.
+      const languageForBackend = languageMap[currentLanguageCode.toLowerCase()] || currentLanguageCode.toLowerCase();
 
       const response = await axios.post(chatBotApiUrl, {
         answer: userMessage, 
         template: dataToSend, 
         conversation_history: conversationHistory, // Send current conversation history
-        language: currentLanguageFullName // Send the full language name
+        language: languageForBackend // Send the mapped English language name
       });
       
       console.log("Backend Response:", response); // Log the full response object
@@ -363,7 +379,7 @@ const ChatBot = () => {
           <span className="text-xs">{input.length}/500</span>
         </div>
       </form>
-    </div>
+    </div> // Closes the main div wrapper for the component
   );
 };
 
