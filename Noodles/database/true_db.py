@@ -685,15 +685,7 @@ def update_bill(
 
 
 if __name__ == "__main__":
-    print("MCP server starting...", file=sys.stderr)
-    import uvicorn
-    print("Starting MCP server via Uvicorn on http://127.0.0.1:8000", file=sys.stderr)
-    # FastMCP uses FastAPI under the hood, so it will typically run on port 8000 by default
-    # The 'run' method of FastMCP will handle the Uvicorn server startup.
-    mcp.run(transport="stdio") # This will block and run the server
-
-"""if __name__ == "__main__":
     print("MCP server started.", file=sys.stderr)
     import uvicorn
     print("Starting MCP server via Uvicorn.", file=sys.stderr)
-    mcp.run(transport="stdio")"""
+    mcp.run(transport="stdio")
